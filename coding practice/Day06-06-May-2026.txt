@@ -1,0 +1,25 @@
+# Day 01 - Git Basics
+
+## Git Commands Practiced
+
+git init
+git add .
+git commit -m "first commit"
+git push
+
+## Linux Commands Practiced
+
+mkdir
+cd
+ls
+pwd
+touch
+
+## What I Learned Today
+
+- Created GitHub repository
+- Learned git init
+- Learned git add and git commit
+- Learned git push
+- Connected local repo to GitHub
+- Practiced VS Code editing
