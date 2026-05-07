@@ -1,0 +1,12 @@
+Day 07 Timing Log
+
+Started Practice: 1:00 PM
+Completed Practice: 4:00 PM
+
+Topics Practiced:
+- Ansible YAML
+- Terraform EC2
+- Kubernetes Pod
+- Jenkins Pipeline
+- GitLab CI
+- GitHub Push
