@@ -1,0 +1,9 @@
+# Day08 Timing — 08 May 2026
+
+Ansible Practice      : 1 Hour
+Terraform Practice    : 1 Hour
+Kubernetes Practice   : 1 Hour
+Maven & Jenkins       : 1.5 Hour
+GitHub Practice       : 30 Minutes
+
+Total Study Time      : 5 Hours
