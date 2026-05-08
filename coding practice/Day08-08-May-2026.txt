@@ -1,0 +1,47 @@
+# Day08 — 08 May 2026 DevOps Practice
+
+## Ansible Practice
+- Installed Ansible on EC2
+- Checked Ansible version
+- Created inventory file
+- Created nginx.yml playbook
+- Ran ansible-playbook command
+- Installed and verified Nginx service
+
+## Terraform Practice
+- Checked Terraform version
+- Created terraform-practice folder
+- Created main.tf file
+- Practiced provider and aws_instance resource
+- Ran terraform init
+- Ran terraform validate
+- Practiced terraform plan
+- Learned about AWS credentials error
+
+## Kubernetes Practice
+- Installed kubectl
+- Checked kubectl client version
+- Created deployment.yml
+- Practiced Kubernetes Deployment YAML
+- Learned replicas and container configuration
+- Tried kubectl apply
+- Learned Kubernetes cluster connection concept
+
+## Maven & Jenkins Practice
+- Installed Maven
+- Cloned Java Maven project
+- Ran mvn clean compile
+- Ran mvn test
+- Ran mvn package
+- Learned Jenkins Pipeline stages
+- Learned GitLab CI Maven workflow
+
+## Shell Script Practice
+- Learned disk usage shell script
+- Practiced df -h command
+
+## GitHub Practice
+- Created Day08 practice file
+- Practiced git add
+- Practiced git commit
+- Practiced git push
