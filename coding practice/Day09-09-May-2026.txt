@@ -1,0 +1,8 @@
+Day 03 Practice
+
+- Ansible user creation
+- Terraform security group
+- Kubernetes environment variables
+- Shell script file check
+- NodeJS build workflow
+- GitLab CI concepts

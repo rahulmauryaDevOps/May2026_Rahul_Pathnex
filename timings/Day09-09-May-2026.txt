@@ -1,0 +1,8 @@
+Start Time: 3:00 AM
+End Time: 6:30 PM
+
+Topics Practiced:
+- Kubernetes Env Vars
+- Terraform SG
+- NodeJS Build
+- GitLab CI
