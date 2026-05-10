@@ -1,0 +1,14 @@
+Start Time: 10:00 AM
+End Time: 1:30 PM
+
+Topics Practiced:
+- Ansible package installation
+- Terraform SSH key pair
+- Kubernetes Service
+- Jenkins parallel pipeline
+- GitLab CI parallel jobs
+- Shell scripting automation
+- Git automation script
+- SSH key generation
+- Kubernetes service networking
+- CI/CD workflow concepts

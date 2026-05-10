@@ -1,0 +1,18 @@
+Day 04 Practice
+
+- Ansible multiple package installation
+- Installed git and wget using Ansible playbook
+- Learned inventory and hosts configuration
+- Terraform SSH key pair creation
+- Generated public and private SSH keys
+- Practiced aws_key_pair resource in Terraform
+- Learned purpose of SSH key authentication
+- Kubernetes Service YAML practice
+- Learned ClusterIP service concept
+- Understood selector, port and targetPort
+- Jenkins parallel pipeline practice
+- Learned parallel build and test execution
+- GitLab CI parallel jobs practice
+- Learned CI/CD automation workflow
+- Created shell script for automatic git push
+- Practiced chmod and shell script execution
