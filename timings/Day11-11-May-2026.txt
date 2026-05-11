@@ -1,0 +1,12 @@
+Start Time: 6:00 AM
+End Time: 8:30 PM
+
+Topics Practiced:
+- Ansible Handlers
+- Terraform User Data
+- Kubernetes Resource Limits
+- Jenkins Environment Variables
+- GitLab CI Variables
+- Nginx Deployment
+- AWS Security Groups
+- EC2 Web Server Hosting

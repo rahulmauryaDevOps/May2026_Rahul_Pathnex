@@ -1,0 +1,14 @@
+Day 05 Practice
+
+- Ansible handler practice
+- Automatic nginx restart using handlers
+- Learned notify and handlers concepts
+- Terraform user_data practice
+- Automatic EC2 startup configuration
+- Kubernetes resource limits
+- Learned CPU and memory limits
+- Jenkins environment variables
+- GitLab CI variables
+- Practiced CI/CD environment variable usage
+- AWS Security Group HTTP configuration
+- Live nginx deployment on EC2
