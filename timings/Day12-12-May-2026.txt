@@ -1,0 +1,11 @@
+Start Time: 11:00 AM
+End Time: 3:30 PM
+
+Topics Practiced:
+- Ansible Debugging
+- Terraform Debugging
+- Kubernetes YAML Debugging
+- Jenkins Pipeline Debugging
+- GitLab CI Debugging
+- YAML Syntax Fixing
+- CI/CD Error Handling

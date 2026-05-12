@@ -1,0 +1,14 @@
+Day 06 Practice
+
+- Ansible debugging practice
+- Fixed broken YAML syntax
+- Learned indentation and colon issues
+- Terraform debugging practice
+- Fixed instance_type and tags syntax
+- Kubernetes YAML debugging
+- Fixed apiVersion, kind and spec syntax
+- Jenkins pipeline debugging
+- Learned compile and test failure handling
+- GitLab CI debugging
+- Learned exit codes and job failure handling
+- Practiced CI/CD pipeline debugging concepts
