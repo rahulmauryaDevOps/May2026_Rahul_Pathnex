@@ -1,0 +1,13 @@
+Day 07 Practice
+
+- Speed typing DevOps practice
+- Ansible nginx installation playbook
+- Terraform EC2 automation
+- Kubernetes deployment with 2 replicas
+- Shell scripting practice
+- Date and uptime script
+- Jenkins parameterized pipeline
+- GitLab CI variables practice
+- CI/CD workflow understanding
+- Infrastructure automation concepts
+- 1 hour youtube video install cluster in aws

@@ -1,0 +1,11 @@
+Start Time: 11:00 AM
+End Time: 6:00 PM
+
+Topics Practiced:
+- Ansible
+- Terraform
+- Kubernetes
+- Shell Scripting
+- Jenkins Parameterized Pipeline
+- GitLab CI Variables
+- DevOps Speed Typing Practice
