@@ -1,0 +1,11 @@
+Start Time: 7:00 AM
+End Time: 6:30 PM
+
+Topics Practiced:
+- Ansible Variables
+- Terraform VPC & Subnet
+- Kubernetes Probes
+- Shell Scripting Loops
+- Jenkins Conditional Execution
+- GitLab CI Conditional Jobs
+- DevOps Automation Concepts

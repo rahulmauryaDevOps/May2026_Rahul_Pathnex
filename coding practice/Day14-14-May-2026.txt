@@ -1,0 +1,13 @@
+Day 08 Practice
+
+- Ansible variables practice
+- Installed packages using variables
+- Terraform VPC and subnet creation
+- Learned CIDR block concepts
+- Kubernetes liveness and readiness probes
+- Pod health monitoring understanding
+- Shell scripting loops practice
+- Jenkins conditional execution pipeline
+- GitLab CI conditional jobs
+- Environment based deployment concepts
+- DevOps automation and infrastructure understanding
