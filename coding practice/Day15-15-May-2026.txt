@@ -1,0 +1,13 @@
+Day 09 Practice
+
+- Ansible Jinja2 template practice
+- Dynamic configuration deployment understanding
+- Terraform Internet Gateway creation
+- AWS VPC internet connectivity concepts
+- Kubernetes ConfigMap understanding
+- Application configuration management concepts
+- Shell scripting CPU load monitoring
+- Jenkins archive artifacts concepts
+- Manual Maven build and artifact generation
+- GitLab CI artifact storage concepts
+- Real DevOps automation workflow understanding

@@ -1,0 +1,11 @@
+Start Time: 11:00 AM
+End Time: 5:15 PM
+
+Topics Practiced:
+- Ansible Jinja2 Templates
+- Terraform Internet Gateway
+- Kubernetes ConfigMap
+- Shell Script CPU Monitoring
+- Jenkins Archive Artifacts
+- GitLab CI Artifacts
+- DevOps Automation Concepts
