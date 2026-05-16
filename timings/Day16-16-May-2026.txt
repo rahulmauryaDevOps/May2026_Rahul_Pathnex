@@ -1,0 +1,11 @@
+Start Time: 11:00 AM
+End Time: 7:00 PM
+
+Topics Practiced:
+- Ansible When Condition
+- Terraform Route Table
+- Kubernetes Secret
+- Shell Script Loop
+- Jenkins Dependency Cache
+- GitLab CI Dependency Cache
+- DevOps Automation Concepts

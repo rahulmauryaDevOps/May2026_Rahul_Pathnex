@@ -1,0 +1,13 @@
+Day 10 Practice
+
+- Ansible when condition practice
+- OS based package installation logic
+- Terraform Route Table and Association
+- AWS networking and routing concepts
+- Kubernetes Secret understanding
+- Secure configuration management concepts
+- Shell scripting number loop practice
+- Jenkins Maven dependency cache concepts
+- GitLab CI dependency cache concepts
+- CI/CD performance optimization understanding
+- Real DevOps automation workflow practice
