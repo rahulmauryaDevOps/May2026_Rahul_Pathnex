@@ -1,0 +1,13 @@
+Day 11 Practice
+
+- Ansible MariaDB installation automation
+- Database service management concepts
+- Terraform output public IP concept
+- AWS EC2 output automation understanding
+- Kubernetes sidecar container architecture
+- Multi-container pod concepts
+- Shell scripting function practice
+- Jenkins email notification concepts
+- GitLab CI notification workflow
+- CI/CD monitoring and automation understanding
+- Real DevOps infrastructure workflow practice

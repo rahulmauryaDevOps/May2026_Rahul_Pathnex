@@ -1,0 +1,11 @@
+Start Time: 01:00 PM
+End Time: 7:30 PM
+
+Topics Practiced:
+- Ansible MariaDB
+- Terraform Outputs
+- Kubernetes Sidecar Container
+- Shell Script Functions
+- Jenkins Notifications
+- GitLab CI Notifications
+- DevOps Automation Concepts
