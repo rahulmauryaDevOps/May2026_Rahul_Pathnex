@@ -1,0 +1,12 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Practiced:
+
+- Ansible Debugging
+- Terraform Debugging
+- Kubernetes Debugging
+- Jenkins Matrix Build
+- GitLab CI Branch Specific Jobs
+- GitLab CI Matrix Jobs
+- GitHub Pull Request Workflow
