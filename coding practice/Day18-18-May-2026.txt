@@ -1,0 +1,10 @@
+Day 12 Practice
+
+- Ansible ensure file with content
+- Terraform RDS skeleton understanding
+- Kubernetes rolling update strategy
+- Shell script backup automation
+- Jenkins multibranch pipeline
+- GitLab CI branch specific jobs
+- CI/CD branching workflow concepts
+- Kubernetes zero downtime deployment

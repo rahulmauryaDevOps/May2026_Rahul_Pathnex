@@ -1,0 +1,15 @@
+Start Time: 01:00 PM
+End Time: 10:15 PM
+
+Topics Practiced:
+
+- Ansible Ensure File With Content
+- Terraform RDS Skeleton
+- Kubernetes Rolling Update Strategy
+- Shell Script Backup Directory
+- Jenkins Multibranch Pipeline
+- GitLab CI Branch Specific Jobs
+- GitHub Branch Push and PR Practice
+- CI/CD Workflow Practice
+- Kubernetes Deployment Update Concepts
+- Terraform Provider and Storage Troubleshooting
