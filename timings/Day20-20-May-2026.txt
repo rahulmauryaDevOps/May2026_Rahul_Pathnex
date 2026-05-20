@@ -1,0 +1,34 @@
+Start Time: 01:00 PM
+End Time: 08:45 PM
+
+Topics Practiced:
+
+- Terraform Mini Project
+  - VPC Creation
+  - Subnet Creation
+  - Internet Gateway
+  - Route Table Association
+  - EC2 Instance Configuration
+
+- Ansible
+  - Nginx Installation
+  - HTML File Deployment
+
+- Kubernetes
+  - Deployment Creation
+  - Service Creation
+
+- Shell Scripting
+  - CPU Information
+  - Memory Usage
+  - Disk Usage
+
+- Jenkins Pipeline
+  - Scheduled Build using Cron Trigger
+
+- GitLab CI
+  - Scheduled Pipeline Configuration
+
+- GitHub
+  - Branch Management
+  - Pull Request Creation and Review Workflow
