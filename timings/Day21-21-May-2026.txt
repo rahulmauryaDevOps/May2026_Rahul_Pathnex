@@ -1,0 +1,12 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Practiced:
+
+- Ansible Java Installation and JAVA_HOME Configuration
+- Terraform S3 Bucket Creation
+- Kubernetes CronJob
+- Shell Script File Reader
+- Jenkins Slack Notification
+- GitLab CI Slack Notification
+- CI/CD Notification Concepts
