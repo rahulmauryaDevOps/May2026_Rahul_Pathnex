@@ -1,0 +1,10 @@
+Day 14 Practice
+
+Topics covered:
+- Terraform VPC, Subnet, Internet Gateway, Route Table and EC2
+- Ansible Nginx installation and HTML deployment
+- Kubernetes Deployment and Service
+- Shell script for CPU, Memory and Disk information
+- Jenkins Scheduled Pipeline using cron
+- GitLab CI Scheduled Pipeline
+- Argocd complete Hand on Practice
