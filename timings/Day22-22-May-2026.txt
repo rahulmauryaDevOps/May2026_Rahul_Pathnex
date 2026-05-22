@@ -1,0 +1,23 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Multi-Region EC2 Creation
+- Terraform Multi-Region VPC and EC2
+- Terraform Validation Practice
+- Kubernetes Deployment
+- Jenkins Multi-Cluster Deployment
+- GitLab CI/CD Multi-Region Deployment
+- Docker Shell Script Execution
+
+Activities Performed:
+
+- Created Terraform configuration files
+- Executed terraform init
+- Executed terraform validate
+- Created Kubernetes deployment YAML
+- Practiced Jenkins multi-cluster deployment pipeline
+- Practiced GitLab CI/CD multi-region deployment pipeline
+- Created Dockerfile and shell script
+- Learned Docker image build and container execution workflow
