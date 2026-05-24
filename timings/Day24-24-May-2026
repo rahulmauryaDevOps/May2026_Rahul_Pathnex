@@ -1,0 +1,31 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Facts
+- Terraform Variables, Outputs and tfvars
+- Kubernetes Node Affinity
+- Shell Script Log Archiving
+- Jenkins Rollback Simulation
+- GitLab CI Rollback Simulation
+
+Commands Practiced:
+
+ansible-playbook --syntax-check facts.yml
+terraform init
+terraform validate
+terraform plan
+kubectl apply -f affinity-pod.yml
+kubectl describe pod pathnex-affinity
+chmod +x archive-logs.sh
+./archive-logs.sh
+
+Activities:
+
+- Collected system facts using Ansible
+- Practiced Terraform variables and outputs
+- Implemented Kubernetes node affinity scheduling
+- Archived log files using shell scripting
+- Simulated deployment rollback in Jenkins
+- Simulated deployment rollback in GitLab CI
