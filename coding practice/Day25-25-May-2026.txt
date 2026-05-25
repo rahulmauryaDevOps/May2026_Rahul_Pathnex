@@ -1,0 +1,185 @@
+Day 19 - Git Deploy, RDS Skeleton, Rolling Strategy, Ping Check and Manual Approval
+
+====================================================
+1. Ansible — Deploy App Using Git
+====================================================
+
+---
+- name: Deploy app from Git for Pathnex
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install git
+      yum:
+        name: git
+        state: present
+
+    - name: Clone repository
+      git:
+        repo: "https://github.com/pathnex/app.git"
+        dest: "/opt/pathnex-app"
+
+Commands Practiced:
+
+mkdir ansible-day19
+cd ansible-day19
+vim git-deploy.yml
+ansible-playbook --syntax-check git-deploy.yml
+git --version
+git clone https://github.com/git/git.git
+
+
+====================================================
+2. Terraform — RDS Skeleton (MySQL)
+====================================================
+
+resource "aws_db_instance" "PathnexRDS" {
+  allocated_storage   = 20
+  engine              = "mysql"
+  instance_class      = "db.t3.micro"
+  username            = "admin"
+  password            = "Pathnex123"
+  skip_final_snapshot = true
+}
+
+Commands Practiced:
+
+mkdir terraform-day19
+cd terraform-day19
+vim main.tf
+terraform init
+terraform validate
+terraform plan
+
+
+====================================================
+3. Kubernetes — Rolling Update Strategy
+====================================================
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: pathnex-rollout
+
+spec:
+  replicas: 3
+
+  strategy:
+    type: RollingUpdate
+
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+
+  selector:
+    matchLabels:
+      app: rollout
+
+  template:
+    metadata:
+      labels:
+        app: rollout
+
+    spec:
+      containers:
+        - name: app
+          image: nginx
+
+Commands Practiced:
+
+mkdir k8s-day19
+cd k8s-day19
+vim rollout.yml
+kubectl apply -f rollout.yml
+kubectl get deployments
+kubectl get pods
+kubectl set image deployment/pathnex-rollout app=nginx:latest
+kubectl rollout status deployment/pathnex-rollout
+
+
+====================================================
+4. Shell Script — Check Internet Connectivity
+====================================================
+
+#!/bin/bash
+
+ping -c 2 google.com &> /dev/null
+
+if [ $? -eq 0 ]; then
+  echo "Internet is available"
+else
+  echo "No internet connection"
+fi
+
+Commands Practiced:
+
+mkdir shell-day19
+cd shell-day19
+vim internet-check.sh
+chmod +x internet-check.sh
+./internet-check.sh
+ping -c 2 google.com
+
+
+====================================================
+5. Jenkins Pipeline — Manual Approval
+====================================================
+
+pipeline {
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+    }
+
+    stages {
+        stage('Deploy') {
+            steps {
+                input message: "Approve deployment for $INSTITUTE_NAME?"
+                sh 'echo "Deployment approved and executed!"'
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day19
+cd jenkins-day19
+vim Jenkinsfile
+cat Jenkinsfile
+
+Concept:
+Deploy → Approval Request → Proceed/Abort → Deployment
+
+
+====================================================
+6. GitLab CI — Manual Approval Job
+====================================================
+
+stages:
+  - deploy
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+
+  script:
+    - echo "Ready to deploy $INSTITUTE_NAME"
+
+  when: manual
+
+Commands Practiced:
+
+mkdir gitlab-day19
+cd gitlab-day19
+vim .gitlab-ci.yml
+cat .gitlab-ci.yml
+
+Concept:
+Pipeline → Manual Job → Play Button → Deployment

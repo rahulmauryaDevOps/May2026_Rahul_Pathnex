@@ -1,0 +1,32 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Deploy App Using Git
+- Terraform RDS Skeleton (MySQL)
+- Kubernetes Rolling Update Strategy
+- Shell Script Internet Connectivity Check
+- Jenkins Manual Approval Pipeline
+- GitLab CI Manual Approval Job
+
+Commands Practiced:
+
+ansible-playbook --syntax-check git-deploy.yml
+git clone https://github.com/pathnex/app.git
+terraform init
+terraform validate
+terraform plan
+kubectl apply -f rollout.yml
+kubectl rollout status deployment/pathnex-rollout
+chmod +x internet-check.sh
+./internet-check.sh
+
+Activities:
+
+- Automated application deployment using Git
+- Practiced Terraform RDS configuration
+- Implemented Kubernetes rolling update strategy
+- Verified internet connectivity using shell scripting
+- Learned Jenkins manual approval workflow
+- Learned GitLab CI manual deployment approvals
