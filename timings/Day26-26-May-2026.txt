@@ -1,0 +1,30 @@
+Start Time: 01:00 PM
+End Time: 08:30 PM
+
+Topics Covered:
+
+- Ansible Debugging
+- Terraform Debugging
+- Kubernetes Debugging
+- Jenkins Credentials Management
+- GitLab CI/CD Variables
+
+Commands Practiced:
+
+ansible-playbook --syntax-check broken.yml
+terraform fmt
+terraform validate
+terraform plan
+kubectl apply --dry-run=client -f broken-deployment.yml
+kubectl apply -f broken-deployment.yml
+kubectl get deployments
+kubectl get pods
+kubectl describe deployment broken-app
+
+Activities:
+
+- Fixed Ansible syntax and indentation issues
+- Fixed Terraform resource configuration errors
+- Fixed Kubernetes YAML syntax errors
+- Practiced Jenkins credential management
+- Practiced GitLab CI/CD variable handling

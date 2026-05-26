@@ -1,0 +1,202 @@
+Day 20 - DEBUG DAY and Secure Credentials
+
+====================================================
+1. Ansible — Broken Playbook Debugging
+====================================================
+
+# Broken Code
+
+- name Install stuff
+  hosts all
+  tasks:
+   -name: install
+    yum:
+      name httpd
+      state present
+
+# Fixed Code
+
+---
+- name: Install stuff
+  hosts: all
+
+  tasks:
+    - name: install
+      yum:
+        name: httpd
+        state: present
+
+Commands Practiced:
+
+mkdir ansible-day20
+cd ansible-day20
+vim broken.yml
+ansible-playbook --syntax-check broken.yml
+ansible-playbook broken.yml
+
+
+====================================================
+2. Terraform — Broken Resource Debugging
+====================================================
+
+# Broken Code
+
+resource aws_instance "Bad" {
+ ami "ami-123"
+ instance_type c6i.8xlarge
+}
+
+# Fixed Code
+
+resource "aws_instance" "Bad" {
+  ami           = "ami-123"
+  instance_type = "c6i.8xlarge"
+}
+
+Commands Practiced:
+
+mkdir terraform-day20
+cd terraform-day20
+vim main.tf
+terraform fmt
+terraform validate
+terraform plan
+
+
+====================================================
+3. Kubernetes — Broken Deployment Debugging
+====================================================
+
+# Broken Code
+
+apiVersion apps/v1
+kind Deployment
+metadata:
+ name broken-app
+spec:
+replicas:3
+selector:
+ matchLabels:
+   app: broken
+template:
+ metadata:
+  labels:
+   app: broken
+ spec:
+  containers:
+   -name: app
+    image nginx
+
+# Fixed Code
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: broken-app
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: broken
+
+  template:
+    metadata:
+      labels:
+        app: broken
+
+    spec:
+      containers:
+        - name: app
+          image: nginx
+
+Commands Practiced:
+
+mkdir k8s-day20
+cd k8s-day20
+vim broken-deployment.yml
+kubectl apply --dry-run=client -f broken-deployment.yml
+kubectl apply -f broken-deployment.yml
+kubectl get deployments
+kubectl get pods
+kubectl describe deployment broken-app
+
+
+====================================================
+4. Jenkins Pipeline — Using Credentials
+====================================================
+
+pipeline {
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Pathnex/sample-java-app.git'
+            }
+        }
+
+        stage('Use Secret') {
+            steps {
+                withCredentials([string(credentialsId: 'PATHNEX_API_KEY', variable: 'API_KEY')]) {
+                    sh 'echo "Using secret $API_KEY for $INSTITUTE_NAME"'
+                }
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day20
+cd jenkins-day20
+vim Jenkinsfile
+cat Jenkinsfile
+
+Concept:
+
+- Jenkins Credentials Store
+- Secret Text Credentials
+- withCredentials Block
+- Secure API Key Usage
+- Secret Masking
+
+
+====================================================
+5. GitLab CI — Using CI/CD Variables
+====================================================
+
+stages:
+  - build
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  API_KEY: "PLACEHOLDER_SECRET"
+
+build:
+  stage: build
+  image: alpine:latest
+
+  script:
+    - echo "Using secret $API_KEY for $INSTITUTE_NAME"
+
+Commands Practiced:
+
+mkdir gitlab-day20
+cd gitlab-day20
+vim .gitlab-ci.yml
+cat .gitlab-ci.yml
+
+Concept:
+
+- GitLab CI/CD Variables
+- Secure Secret Management
+- Environment Variables
+- Masked Variables
+- Protected Variables
