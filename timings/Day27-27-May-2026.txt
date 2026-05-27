@@ -1,0 +1,20 @@
+Start Time: 10:00 AM
+End Time: 4:30 PM
+
+Topics Covered:
+
+- Ansible Nginx Installation
+- Terraform EC2 Creation
+- Kubernetes Deployment
+- Shell Scripting
+- Jenkins Multi Environment Pipeline
+- GitLab CI Multi Environment Deployment
+
+Activities:
+
+- Created Ansible playbook for nginx installation
+- Created Terraform EC2 resource with tags
+- Created Kubernetes deployment with 3 replicas
+- Wrote shell script for date uptime and disk usage
+- Practiced Jenkins multi-stage deployment pipeline
+- Practiced GitLab CI deployment to multiple environments
