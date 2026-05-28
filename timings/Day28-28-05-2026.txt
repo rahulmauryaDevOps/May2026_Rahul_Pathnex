@@ -1,0 +1,20 @@
+Start Time: 01:00 PM
+End Time: 09:30 PM
+
+Topics Covered:
+
+- Ansible Handlers
+- Terraform Security Group
+- Kubernetes DaemonSet
+- Shell Disk Monitoring
+- Jenkins Trigger on Git Tag
+- GitLab CI Trigger on Tag
+
+Activities:
+
+- Practiced Ansible notify handlers
+- Created Terraform security group
+- Practiced Kubernetes DaemonSet
+- Wrote shell script for disk monitoring
+- Studied Jenkins tag-based trigger
+- Studied GitLab CI tag trigger
