@@ -1,0 +1,270 @@
+Day 22 - Handlers, Security Group, DaemonSet, Disk Monitor, Tag Triggers
+
+====================================================
+1. Ansible — Use Handler on Config Change
+====================================================
+
+---
+- name: Configure Nginx for Pathnex
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Copy Nginx config
+      copy:
+        dest: /etc/nginx/nginx.conf
+
+        content: |
+          user nginx;
+          worker_processes auto;
+
+      notify: Restart nginx
+
+  handlers:
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted
+
+Commands Practiced:
+
+mkdir ansible-day22
+cd ansible-day22
+vim handler.yml
+ansible-playbook --syntax-check handler.yml
+ansible-playbook handler.yml
+
+Concept:
+- Ansible Handlers
+- notify Keyword
+- Service Restart Automation
+- Change Detection
+
+
+====================================================
+2. Terraform — Security Group
+====================================================
+
+resource "aws_vpc" "PathnexVPC" {
+  cidr_block = "10.0.0.0/16"
+}
+
+resource "aws_security_group" "PathnexSG" {
+
+  name   = "pathnex-sg"
+
+  vpc_id = aws_vpc.PathnexVPC.id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "Pathnex-SG"
+  }
+}
+
+Commands Practiced:
+
+mkdir terraform-day22
+cd terraform-day22
+vim main.tf
+terraform init
+terraform validate
+terraform plan
+
+Concept:
+- AWS Security Group
+- Ingress Rules
+- HTTP Port 80
+- CIDR Block
+- VPC Association
+
+
+====================================================
+3. Kubernetes — DaemonSet
+====================================================
+
+apiVersion: apps/v1
+
+kind: DaemonSet
+
+metadata:
+  name: pathnex-daemon
+
+spec:
+  selector:
+    matchLabels:
+      app: ds
+
+  template:
+    metadata:
+      labels:
+        app: ds
+
+    spec:
+      containers:
+        - name: monitor
+
+          image: busybox
+
+          command:
+            [
+              "sh",
+              "-c",
+              "while true; do echo Pathnex Node Monitor; sleep 20; done"
+            ]
+
+Commands Practiced:
+
+mkdir k8s-day22
+cd k8s-day22
+vim daemonset.yml
+kubectl apply --dry-run=client -f daemonset.yml
+kubectl apply -f daemonset.yml
+kubectl get daemonsets
+kubectl get pods -o wide
+
+Concept:
+- Kubernetes DaemonSet
+- One Pod Per Node
+- Monitoring Agents
+- Logging Agents
+- Node Level Workloads
+
+
+====================================================
+4. Shell Script — Monitor Disk Usage
+====================================================
+
+#!/bin/bash
+
+USAGE=$(df -h / | tail -1 | awk '{print $5}')
+
+echo "Disk Usage: $USAGE"
+
+Commands Practiced:
+
+mkdir shell-day22
+cd shell-day22
+vim disk-monitor.sh
+chmod +x disk-monitor.sh
+./disk-monitor.sh
+
+Concept:
+- Disk Usage Monitoring
+- df Command
+- awk Command
+- Shell Variables
+- Basic System Monitoring
+
+
+====================================================
+5. Jenkins Pipeline — Trigger on Git Tag
+====================================================
+
+pipeline {
+
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+        TEAM = "DevOps"
+        ENV = "prod"
+    }
+
+    triggers {
+        pollSCM('H/15 * * * *')
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Pathnex/sample-java-app.git',
+                    branch: 'main'
+            }
+        }
+
+        stage('Build') {
+
+            when {
+                buildingTag()
+            }
+
+            steps {
+                sh 'echo "Building $INSTITUTE_NAME app for $TEAM team in $ENV environment"'
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day22
+cd jenkins-day22
+vim Jenkinsfile
+git tag v1.0
+git push origin v1.0
+
+Concept:
+- Git Tags
+- Jenkins SCM Polling
+- buildingTag()
+- Automated Triggering
+- Release Pipeline
+
+
+====================================================
+6. GitLab CI — Trigger on Tag
+====================================================
+
+stages:
+  - build
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  TEAM: "DevOps"
+  ENV: "prod"
+
+build:
+  stage: build
+
+  image: maven:3.8.1-jdk-17
+
+  script:
+    - echo "Building $INSTITUTE_NAME app for $TEAM team in $ENV environment"
+
+  only:
+    - tags
+
+Commands Practiced:
+
+mkdir gitlab-day22
+cd gitlab-day22
+vim .gitlab-ci.yml
+git tag v1.0
+git push origin v1.0
+
+Concept:
+- Git Tags
+- GitLab CI Trigger
+- only: tags
+- Release Automation
+- Tag Based Deployment
+
+
+====================================================
+Topics Covered
+====================================================
+
+1. Ansible Handlers
+2. Terraform Security Group
+3. Kubernetes DaemonSet
+4. Shell Disk Monitoring
+5. Jenkins Trigger on Git Tag
+6. GitLab CI Trigger on Tag
