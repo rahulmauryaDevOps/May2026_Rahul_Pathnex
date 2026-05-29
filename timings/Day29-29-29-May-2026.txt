@@ -1,0 +1,20 @@
+Start Time: 01:00 PM
+End Time: 4:30 PM
+
+Topics Covered:
+
+- Ansible User Management
+- Terraform Elastic IP
+- Kubernetes HPA
+- Shell Process Management
+- Jenkins Docker Build
+- GitLab CI Docker Build
+
+Activities:
+
+- Created Ansible user playbook
+- Practiced Elastic IP configuration
+- Studied Horizontal Pod Autoscaler
+- Wrote process monitoring and kill script
+- Studied Jenkins Docker image build pipeline
+- Studied GitLab Docker build workflow

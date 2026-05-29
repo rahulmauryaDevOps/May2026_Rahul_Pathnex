@@ -1,0 +1,11 @@
+Day 23 Practice
+
+* Ansible User Creation
+* Terraform Elastic IP (EIP)
+* Kubernetes Horizontal Pod Autoscaler (HPA)
+* Shell Script Kill High CPU Process
+* Jenkins Build Docker Image
+* GitLab CI Build Docker Image
+
+Updated coding practice and timings files.
+
