@@ -1,0 +1,280 @@
+Day 24 - Templates, ALB Listener, PV/PVC, Menu System, Automated Testing
+
+====================================================
+1. Ansible — Deploy Config Using Template
+====================================================
+
+---
+- name: Deploy Pathnex template
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Create config
+      template:
+        src: pathnex.conf.j2
+        dest: /etc/pathnex.conf
+
+Template File (pathnex.conf.j2):
+
+Application=Pathnex
+Environment=Dev
+Team=DevOps
+
+Commands Practiced:
+
+mkdir ansible-day24
+cd ansible-day24
+vim template.yml
+vim pathnex.conf.j2
+
+ansible-playbook --syntax-check template.yml
+ansible-playbook template.yml
+
+Concept:
+- Ansible Template Module
+- Jinja2 Templates
+- Dynamic Configuration
+- Configuration Management
+
+
+====================================================
+2. Terraform — ALB Listener
+====================================================
+
+resource "aws_lb_listener" "PathnexListener" {
+
+  load_balancer_arn = aws_lb.PathnexALB.arn
+
+  port     = "80"
+  protocol = "HTTP"
+
+  default_action {
+    type = "fixed-response"
+
+    fixed_response {
+      content_type = "text/plain"
+      message_body = "Pathnex ALB Running"
+      status_code  = "200"
+    }
+  }
+}
+
+Commands Practiced:
+
+mkdir terraform-day24
+cd terraform-day24
+vim alb-listener.tf
+
+terraform init
+terraform validate
+terraform plan
+
+Concept:
+- AWS Application Load Balancer
+- ALB Listener
+- HTTP Port 80
+- Fixed Response
+- Load Balancing
+
+
+====================================================
+3. Kubernetes — Persistent Volume and PVC
+====================================================
+
+apiVersion: v1
+kind: PersistentVolume
+
+metadata:
+  name: pathnex-pv
+
+spec:
+  capacity:
+    storage: 1Gi
+
+  accessModes:
+    - ReadWriteOnce
+
+  hostPath:
+    path: /data/pathnex
+
+---
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+
+metadata:
+  name: pathnex-pvc
+
+spec:
+  accessModes:
+    - ReadWriteOnce
+
+  resources:
+    requests:
+      storage: 500Mi
+
+Commands Practiced:
+
+mkdir k8s-day24
+cd k8s-day24
+vim pv-pvc.yml
+
+kubectl apply --dry-run=client -f pv-pvc.yml
+kubectl apply -f pv-pvc.yml
+
+kubectl get pv
+kubectl get pvc
+kubectl get pv,pvc
+
+Concept:
+- Persistent Volume
+- Persistent Volume Claim
+- Storage Management
+- Data Persistence
+- Volume Binding
+
+
+====================================================
+4. Shell Script — Menu Driven Program
+====================================================
+
+#!/bin/bash
+
+echo "1) Show date"
+echo "2) Show uptime"
+echo "3) Show users"
+
+read -p "Choose option: " opt
+
+case $opt in
+  1) date ;;
+  2) uptime ;;
+  3) who ;;
+  *) echo "Invalid choice" ;;
+esac
+
+Commands Practiced:
+
+mkdir shell-day24
+cd shell-day24
+vim menu.sh
+
+chmod +x menu.sh
+./menu.sh
+
+Concept:
+- Menu Driven Script
+- Case Statement
+- User Input Handling
+- Linux Administration Automation
+
+
+====================================================
+5. Jenkins Pipeline — Run Unit and Integration Tests
+====================================================
+
+pipeline {
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+        TEAM = "QA"
+        ENV = "dev"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Pathnex/sample-java-app.git'
+            }
+        }
+
+        stage('Unit Test') {
+            steps {
+                sh 'mvn test -Dgroup=unit'
+            }
+        }
+
+        stage('Integration Test') {
+            steps {
+                sh 'mvn verify -Dgroup=integration'
+            }
+        }
+
+        stage('Report') {
+            steps {
+                sh 'echo "Tests completed for $INSTITUTE_NAME by $TEAM in $ENV environment"'
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day24
+cd jenkins-day24
+vim Jenkinsfile
+
+mvn test
+mvn verify
+
+Concept:
+- Unit Testing
+- Integration Testing
+- Maven Lifecycle
+- Jenkins QA Pipeline
+- Automated Testing
+
+
+====================================================
+6. GitLab CI — Run Tests
+====================================================
+
+stages:
+  - unit
+  - integration
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  TEAM: "QA"
+  ENV: "dev"
+
+unit-test:
+  stage: unit
+
+  image: maven:3.8.1-jdk-17
+
+  script:
+    - mvn test -Dgroup=unit
+    - echo "Unit tests completed for $INSTITUTE_NAME by $TEAM in $ENV"
+
+integration-test:
+  stage: integration
+
+  image: maven:3.8.1-jdk-17
+
+  script:
+    - mvn verify -Dgroup=integration
+    - echo "Integration tests completed for $INSTITUTE_NAME by $TEAM in $ENV"
+
+Concept:
+- GitLab CI Testing
+- Unit Testing
+- Integration Testing
+- Maven Lifecycle
+- CI Quality Gates
+
+
+====================================================
+Topics Covered
+====================================================
+
+1. Ansible Template Module
+2. Terraform ALB Listener
+3. Kubernetes PV and PVC
+4. Shell Menu Driven Program
+5. Jenkins Automated Testing Pipeline
+6. GitLab CI Automated Testing Pipeline
+

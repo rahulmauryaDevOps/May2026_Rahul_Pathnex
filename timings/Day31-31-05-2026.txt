@@ -1,0 +1,20 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Templates
+- Terraform ALB Listener
+- Kubernetes PV/PVC
+- Shell Menu Driven Script
+- Jenkins Automated Testing
+- GitLab CI Automated Testing
+
+Activities:
+
+- Practiced Jinja2 template deployment
+- Studied ALB listener configuration
+- Practiced persistent storage concepts
+- Created menu driven shell script
+- Studied Jenkins testing pipeline
+- Studied GitLab CI testing workflow
