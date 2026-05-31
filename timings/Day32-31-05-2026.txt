@@ -1,0 +1,20 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible lineinfile
+- Terraform Key Pair
+- Kubernetes Sidecar Pattern
+- Shell File Count Script
+- Jenkins Dependency Cache
+- GitLab Dependency Cache
+
+Activities:
+
+- Modified SSH configuration using lineinfile
+- Practiced AWS Key Pair creation
+- Studied Sidecar logging pattern
+- Wrote file counting script
+- Learned Maven dependency caching in Jenkins
+- Learned dependency caching in GitLab CI

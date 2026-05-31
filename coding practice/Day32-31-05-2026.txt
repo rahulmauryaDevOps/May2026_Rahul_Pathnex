@@ -1,0 +1,253 @@
+Day 25 - Lineinfile, Key Pair, Sidecar Pod, File Count, Dependency Cache
+
+====================================================
+1. Ansible — Modify Existing Line
+====================================================
+
+---
+- name: Update SSH config for Pathnex
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Disable root login
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^PermitRootLogin"
+        line: "PermitRootLogin no"
+
+Commands Practiced:
+
+mkdir ansible-day25
+cd ansible-day25
+
+vim lineinfile.yml
+
+ansible-playbook --syntax-check lineinfile.yml
+ansible-playbook lineinfile.yml
+
+grep PermitRootLogin /etc/ssh/sshd_config
+
+Concept:
+- lineinfile Module
+- SSH Hardening
+- Configuration Management
+- File Modification
+
+
+====================================================
+2. Terraform — EC2 Key Pair Output
+====================================================
+
+resource "aws_key_pair" "PathnexKey" {
+  key_name   = "PathnexKey"
+  public_key = file("~/.ssh/id_rsa.pub")
+}
+
+output "Pathnex_Key_Name" {
+  value = aws_key_pair.PathnexKey.key_name
+}
+
+Commands Practiced:
+
+ssh-keygen -t rsa -b 4096
+
+mkdir terraform-day25
+cd terraform-day25
+
+vim keypair.tf
+
+terraform init
+terraform validate
+terraform plan
+
+Concept:
+- AWS Key Pair
+- SSH Authentication
+- Public and Private Keys
+- Terraform Output
+- Secure EC2 Access
+
+
+====================================================
+3. Kubernetes — Multi-Container Pod (Sidecar Logging)
+====================================================
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pathnex-sidecar
+
+spec:
+  containers:
+
+    - name: app
+      image: nginx
+
+    - name: log-writer
+      image: busybox
+
+      command:
+        ["sh", "-c", "while true; do echo log entry; sleep 5; done"]
+
+Commands Practiced:
+
+mkdir k8s-day25
+cd k8s-day25
+
+vim sidecar.yml
+
+kubectl apply --dry-run=client -f sidecar.yml
+kubectl apply -f sidecar.yml
+
+kubectl get pods
+kubectl describe pod pathnex-sidecar
+
+kubectl logs pathnex-sidecar -c log-writer
+
+Concept:
+- Multi-Container Pod
+- Sidecar Pattern
+- Logging Container
+- Shared Pod Resources
+- Kubernetes Logging
+
+
+====================================================
+4. Shell Script — Count Files in Directory
+====================================================
+
+#!/bin/bash
+
+DIR="/var/log"
+
+COUNT=$(ls $DIR | wc -l)
+
+echo "Total files in $DIR: $COUNT"
+
+Commands Practiced:
+
+mkdir shell-day25
+cd shell-day25
+
+vim filecount.sh
+
+chmod +x filecount.sh
+
+./filecount.sh
+
+Concept:
+- File Counting
+- Linux Directories
+- wc Command
+- Shell Variables
+- Basic Monitoring
+
+
+====================================================
+5. Jenkins Pipeline — Cache Dependencies
+====================================================
+
+pipeline {
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+        TEAM = "DevOps"
+        ENV = "staging"
+    }
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git url: 'https://github.com/Pathnex/sample-java-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh '''
+                if [ -d ".m2" ]; then
+                    echo "Using cached dependencies for $INSTITUTE_NAME in $ENV by $TEAM"
+                else
+                    mvn clean compile
+                fi
+                '''
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day25
+cd jenkins-day25
+
+vim Jenkinsfile
+
+mvn clean compile
+
+Concept:
+- Maven Cache
+- Dependency Management
+- Faster Builds
+- Jenkins Optimization
+- CI/CD Performance
+
+
+====================================================
+6. GitLab CI — Cache Dependencies
+====================================================
+
+stages:
+  - build
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  TEAM: "DevOps"
+  ENV: "staging"
+
+build:
+  stage: build
+
+  image: maven:3.8.1-jdk-17
+
+  cache:
+    key: "${ENV}-maven-cache"
+
+    paths:
+      - .m2/repository
+
+  script:
+    - mvn clean compile
+    - echo "Cached dependencies for $INSTITUTE_NAME in $ENV by $TEAM"
+
+Commands Practiced:
+
+mkdir gitlab-day25
+cd gitlab-day25
+
+vim .gitlab-ci.yml
+
+mvn clean compile
+
+Concept:
+- GitLab Cache
+- Maven Repository
+- Dependency Management
+- Faster Builds
+- CI/CD Optimization
+
+
+====================================================
+Topics Covered
+====================================================
+
+1. Ansible lineinfile Module
+2. Terraform EC2 Key Pair Output
+3. Kubernetes Multi-Container Pod (Sidecar)
+4. Shell Script File Count
+5. Jenkins Dependency Cache
+6. GitLab CI Dependency Cache
