@@ -1,0 +1,29 @@
+Start Time: 09:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Multiple Services Management
+- Terraform Route53 Record
+- Kubernetes Init Container
+- Shell System Status Script
+- Jenkins Dynamic Environment Deployment
+- GitLab Dynamic Environment Deployment
+
+Activities:
+
+- Installed and managed multiple services using Ansible
+- Practiced Route53 DNS record creation
+- Studied Kubernetes Init Container workflow
+- Created system status monitoring script
+- Learned Jenkins parameterized deployments
+- Learned GitLab dynamic environment deployments
+
+Concepts Learned:
+
+- Package Installation and Service Management
+- DNS and Route53
+- Kubernetes Pod Initialization
+- Linux System Monitoring
+- Dynamic Environment Deployment
+- CI/CD Automation
