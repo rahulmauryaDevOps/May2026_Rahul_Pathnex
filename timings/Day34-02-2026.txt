@@ -1,0 +1,26 @@
+Start Time: 01:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Copy Directory
+- Terraform EBS Volume
+- Kubernetes NodePort Service
+- Shell Log Cleaner
+- Jenkins Scripted Pipeline
+
+Activities:
+
+- Practiced recursive directory copy
+- Created and attached EBS volume
+- Exposed application using NodePort
+- Cleaned old log files using shell script
+- Learned scripted pipeline with conditional logic and approval
+
+Concepts Learned:
+
+- Backup Automation
+- Persistent Storage
+- Kubernetes Networking
+- Log Management
+- Advanced Jenkins Pipelines

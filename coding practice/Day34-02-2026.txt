@@ -1,0 +1,208 @@
+Day 27 - Copy Directory, EBS Volume, NodePort, Log Cleaner, Scripted Pipeline
+
+====================================================
+1. Ansible — Copy Directory Recursively
+====================================================
+
+---
+- name: Copy Pathnex files
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Copy directory
+      copy:
+        src: /opt/pathnex/
+        dest: /backup/pathnex/
+        remote_src: yes
+
+Commands Practiced:
+
+mkdir ansible-day27
+cd ansible-day27
+
+vim copydir.yml
+
+ansible-playbook --syntax-check copydir.yml
+ansible-playbook copydir.yml
+
+ls -l /backup/pathnex
+
+Concept:
+- Copy Module
+- Recursive Copy
+- Backup Management
+- Remote Source
+- Directory Migration
+
+
+====================================================
+2. Terraform — EBS Volume + Attachment
+====================================================
+
+resource "aws_ebs_volume" "PathnexVolume" {
+  availability_zone = "us-east-1a"
+  size              = 20
+
+  tags = {
+    Name = "Pathnex-Volume"
+  }
+}
+
+resource "aws_volume_attachment" "PathnexAttach" {
+  device_name = "/dev/sdh"
+  volume_id   = aws_ebs_volume.PathnexVolume.id
+  instance_id = aws_instance.PathnexEC2.id
+}
+
+Commands Practiced:
+
+mkdir terraform-day27
+cd terraform-day27
+
+vim ebs.tf
+
+terraform init
+terraform validate
+terraform plan
+
+Concept:
+- AWS EBS Volume
+- Persistent Storage
+- Volume Attachment
+- EC2 Storage Expansion
+- Block Storage
+
+
+====================================================
+3. Kubernetes — NodePort Service
+====================================================
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: pathnex-nodeport
+
+spec:
+  type: NodePort
+
+  selector:
+    app: pathnex
+
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
+
+Commands Practiced:
+
+mkdir k8s-day27
+cd k8s-day27
+
+vim nodeport.yml
+
+kubectl apply --dry-run=client -f nodeport.yml
+kubectl apply -f nodeport.yml
+
+kubectl get svc
+kubectl describe svc pathnex-nodeport
+
+Concept:
+- Kubernetes Service
+- NodePort
+- External Access
+- Service Discovery
+- Networking
+
+
+====================================================
+4. Shell Script — Clean Old Logs
+====================================================
+
+#!/bin/bash
+
+find /var/log -type f -mtime +7 -exec rm -f {} \;
+
+echo "Old logs removed."
+
+Commands Practiced:
+
+mkdir shell-day27
+cd shell-day27
+
+vim cleanlogs.sh
+
+chmod +x cleanlogs.sh
+
+./cleanlogs.sh
+
+df -h
+
+Concept:
+- Log Rotation
+- Log Cleanup
+- Disk Space Management
+- find Command
+- Linux Administration
+
+
+====================================================
+5. Jenkins Scripted Pipeline — Complex Logic
+====================================================
+
+node {
+
+    def envName = "dev"
+
+    env.INSTITUTE_NAME = "Pathnex"
+    env.TEAM = "DevOps"
+
+    stage('Checkout') {
+        git url: 'https://github.com/Pathnex/sample-java-app.git'
+    }
+
+    stage('Build') {
+
+        if (envName == "dev") {
+
+            sh 'echo "Building $INSTITUTE_NAME app in dev environment for $TEAM"'
+
+        } else {
+
+            sh 'echo "Skipping build for $envName"'
+        }
+    }
+
+    stage('Deploy') {
+
+        input message: "Approve deployment for $envName?"
+
+        sh 'echo "Deploying $INSTITUTE_NAME app to $envName for $TEAM team"'
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day27
+cd jenkins-day27
+
+vim Jenkinsfile
+
+Concept:
+- Scripted Pipeline
+- Groovy Logic
+- Conditional Statements
+- Manual Approval
+- Advanced CI/CD Pipelines
+
+
+====================================================
+Topics Covered
+====================================================
+
+1. Ansible Copy Directory Recursively
+2. Terraform EBS Volume and Attachment
+3. Kubernetes NodePort Service
+4. Shell Script Log Cleaner
+5. Jenkins Scripted Pipeline
