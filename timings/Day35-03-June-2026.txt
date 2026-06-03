@@ -1,0 +1,26 @@
+Start Time: 01:00 PM
+End Time: 08:30 PM
+
+Topics Covered:
+
+- Ansible Debugging
+- Terraform Debugging
+- Kubernetes YAML Debugging
+- Jenkins Rollback Strategy
+- GitLab CI Rollback Strategy
+
+Activities:
+
+- Fixed broken Ansible playbook syntax
+- Corrected Terraform S3 bucket configuration
+- Fixed Kubernetes Pod YAML errors
+- Practiced automatic rollback in Jenkins
+- Practiced rollback handling in GitLab CI
+
+Concepts Learned:
+
+- YAML Troubleshooting
+- Terraform Validation
+- Kubernetes Debugging
+- Rollback Strategies
+- CI/CD Failure Recovery
