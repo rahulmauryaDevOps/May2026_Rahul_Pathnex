@@ -1,0 +1,200 @@
+Day 28 - Debug Day and Rollback Strategies
+
+====================================================
+1. Ansible — Debug Broken Playbook
+====================================================
+
+---
+- name: Install nginx
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install nginx package
+      yum:
+        name: nginx
+        state: present
+
+Commands Practiced:
+
+mkdir ansible-day28
+cd ansible-day28
+
+vim debug.yml
+
+ansible-playbook --syntax-check debug.yml
+ansible-playbook debug.yml
+
+Concept:
+- YAML Syntax
+- Ansible Debugging
+- Package Installation
+- Playbook Validation
+
+
+====================================================
+2. Terraform — Debug Broken S3 Bucket
+====================================================
+
+resource "aws_s3_bucket" "BadBucket" {
+
+  bucket = "pathnex-bucket"
+
+  acl = "public-read"
+}
+
+Commands Practiced:
+
+mkdir terraform-day28
+cd terraform-day28
+
+vim bucket.tf
+
+terraform init
+terraform validate
+terraform plan
+
+Concept:
+- Terraform Debugging
+- S3 Bucket
+- Resource Syntax
+- Terraform Validation
+- AWS Storage
+
+
+====================================================
+3. Kubernetes — Debug Broken Pod YAML
+====================================================
+
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: brokenpod
+
+spec:
+  containers:
+    - name: app
+      image: nginx
+
+Commands Practiced:
+
+mkdir k8s-day28
+cd k8s-day28
+
+vim pod.yml
+
+kubectl apply --dry-run=client -f pod.yml
+kubectl apply -f pod.yml
+
+kubectl get pods
+kubectl describe pod brokenpod
+
+Concept:
+- Kubernetes Debugging
+- YAML Syntax
+- Pod Creation
+- Container Configuration
+- YAML Validation
+
+
+====================================================
+4. Jenkins Pipeline — Automatic Rollback
+====================================================
+
+pipeline {
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+        TEAM = "DevOps"
+        ENV = "prod"
+    }
+
+    stages {
+
+        stage('Deploy') {
+
+            steps {
+
+                script {
+
+                    try {
+
+                        sh 'echo "Deploying $INSTITUTE_NAME app in $ENV for $TEAM"'
+
+                        sh 'exit 1'
+
+                    } catch (Exception e) {
+
+                        echo "Deployment failed. Rolling back $INSTITUTE_NAME app in $ENV"
+                    }
+                }
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day28
+cd jenkins-day28
+
+vim Jenkinsfile
+
+Concept:
+- Rollback Strategy
+- try-catch
+- Deployment Failure Handling
+- Production Deployment
+- Jenkins Automation
+
+
+====================================================
+5. GitLab CI — Rollback Strategy
+====================================================
+
+stages:
+  - deploy
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  TEAM: "DevOps"
+  ENV: "prod"
+
+deploy:
+  stage: deploy
+
+  image: alpine:latest
+
+  script:
+    - echo "Deploying $INSTITUTE_NAME app in $ENV for $TEAM"
+    - exit 1
+
+  after_script:
+    - echo "Deployment failed. Rolling back $INSTITUTE_NAME app in $ENV"
+
+Commands Practiced:
+
+mkdir gitlab-day28
+cd gitlab-day28
+
+vim .gitlab-ci.yml
+
+Concept:
+- Rollback Strategy
+- Deployment Failure Handling
+- after_script
+- GitLab CI
+- Production Recovery
+
+
+====================================================
+Topics Covered
+====================================================
+
+1. Ansible Debug Broken Playbook
+2. Terraform Debug Broken S3 Bucket
+3. Kubernetes Debug Broken Pod YAML
+4. Jenkins Automatic Rollback
+5. GitLab CI Rollback Strategy
