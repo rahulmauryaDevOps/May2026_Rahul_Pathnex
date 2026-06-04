@@ -1,0 +1,10 @@
+Day 29 Practice Completed
+
+- Terraform Mini Project
+- Ansible Mini Project
+- Kubernetes Mini Project
+- Shell Script Mini Project
+- Jenkins Pipeline Mini Project
+- GitLab CI Mini Project
+
+Updated coding practice and timings files.
