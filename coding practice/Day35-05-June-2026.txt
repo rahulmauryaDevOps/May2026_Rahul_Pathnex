@@ -1,0 +1,341 @@
+Day 30 - Speed Typing Level 3
+
+====================================================
+1. Ansible — Create User + SSH Key + Shell
+====================================================
+
+---
+- name: Create Pathnex Admin User
+  hosts: all
+  become: yes
+
+  tasks:
+
+    - name: Create user
+      user:
+        name: pathnex-admin
+        shell: /bin/bash
+
+    - name: Add SSH Key
+      authorized_key:
+        user: pathnex-admin
+        state: present
+        key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCPathnexKey"
+
+Commands Practiced:
+
+mkdir ansible-day30
+cd ansible-day30
+
+vim user.yml
+
+ansible-playbook --syntax-check user.yml
+ansible-playbook user.yml
+
+Concept:
+- User Management
+- SSH Authentication
+- authorized_key Module
+- Linux Administration
+
+
+====================================================
+2. Terraform — EC2 with Project Tag
+====================================================
+
+provider "aws" {
+  region = "us-east-1"
+}
+
+resource "aws_instance" "PathnexEC2" {
+
+  ami           = "ami-0c02fb55956c7d316"
+
+  instance_type = "c5.xlarge"
+
+  tags = {
+    Project = "Pathnex-Training"
+  }
+}
+
+output "instance_ip" {
+  value = aws_instance.PathnexEC2.public_ip
+}
+
+Commands Practiced:
+
+mkdir terraform-day30
+cd terraform-day30
+
+vim main.tf
+
+terraform init
+terraform validate
+terraform plan
+
+Concept:
+- EC2 Provisioning
+- Resource Tagging
+- Terraform Outputs
+- AWS Infrastructure
+
+
+====================================================
+3. Kubernetes — Deployment + ClusterIP
+====================================================
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: pathnex-deploy
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: pathnex
+
+  template:
+    metadata:
+      labels:
+        app: pathnex
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: pathnex-clusterip
+
+spec:
+  type: ClusterIP
+
+  selector:
+    app: pathnex
+
+  ports:
+    - port: 80
+      targetPort: 80
+
+Commands Practiced:
+
+mkdir k8s-day30
+cd k8s-day30
+
+vim deployment.yml
+
+kubectl apply -f deployment.yml
+
+kubectl get deployment
+kubectl get svc
+
+Concept:
+- Deployment
+- Replica Management
+- ClusterIP Service
+- Kubernetes Networking
+
+
+====================================================
+4. Shell Script — Menu Driven Monitoring
+====================================================
+
+#!/bin/bash
+
+echo "1) IP"
+echo "2) Disk"
+echo "3) Memory"
+
+read -p "Choose option: " opt
+
+case $opt in
+
+1)
+hostname -I
+;;
+
+2)
+df -h
+;;
+
+3)
+free -h
+;;
+
+*)
+echo "Invalid Choice"
+;;
+
+esac
+
+Commands Practiced:
+
+mkdir shell-day30
+cd shell-day30
+
+vim monitor.sh
+
+chmod +x monitor.sh
+
+./monitor.sh
+
+Concept:
+- Menu Driven Script
+- Disk Monitoring
+- Memory Monitoring
+- IP Discovery
+
+
+====================================================
+5. Jenkins Pipeline Mini Project
+====================================================
+
+pipeline {
+
+    agent any
+
+    environment {
+        INSTITUTE_NAME = "Pathnex"
+        TEAM = "DevOps"
+        ENV = "prod"
+        PROJECT = "Pathnex-Training"
+    }
+
+    stages {
+
+        stage('Infrastructure') {
+
+            steps {
+
+                sh '''
+                terraform init
+                terraform validate
+                terraform plan
+                '''
+            }
+        }
+
+        stage('App Deployment') {
+
+            steps {
+
+                sh '''
+                ansible-playbook user.yml
+
+                kubectl apply -f deployment.yml
+                '''
+            }
+        }
+
+        stage('Monitoring Checks') {
+
+            steps {
+
+                sh '''
+                echo "===== IP ====="
+                hostname -I
+
+                echo "===== DISK ====="
+                df -h
+
+                echo "===== MEMORY ====="
+                free -h
+                '''
+            }
+        }
+    }
+}
+
+Commands Practiced:
+
+mkdir jenkins-day30
+cd jenkins-day30
+
+vim Jenkinsfile
+
+Concept:
+- Declarative Pipeline
+- Terraform Automation
+- Ansible Deployment
+- Kubernetes Deployment
+- Monitoring Automation
+
+
+====================================================
+6. GitLab CI Mini Project
+====================================================
+
+stages:
+  - infrastructure
+  - app_deployment
+  - monitoring_checks
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  TEAM: "DevOps"
+  ENV: "prod"
+  PROJECT: "Pathnex-Training"
+
+infrastructure:
+  stage: infrastructure
+  image: hashicorp/terraform:latest
+
+  script:
+    - terraform init
+    - terraform validate
+    - terraform plan
+
+app_deployment:
+  stage: app_deployment
+  image: alpine:latest
+
+  script:
+    - ansible-playbook user.yml
+    - kubectl apply -f deployment.yml
+
+monitoring_checks:
+  stage: monitoring_checks
+  image: alpine:latest
+
+  script:
+    - echo "===== IP ====="
+    - hostname -I
+
+    - echo "===== DISK ====="
+    - df -h
+
+    - echo "===== MEMORY ====="
+    - free -h
+
+Commands Practiced:
+
+mkdir gitlab-day30
+cd gitlab-day30
+
+vim .gitlab-ci.yml
+
+Concept:
+- GitLab CI/CD
+- Infrastructure Provisioning
+- Application Deployment
+- Monitoring Checks
+
+
+====================================================
+Topics Covered
+====================================================
+
+1. Ansible User Creation and SSH Setup
+2. Terraform EC2 with Tags
+3. Kubernetes Deployment and ClusterIP
+4. Shell Menu Driven Monitoring
+5. Jenkins End-to-End Pipeline
+6. GitLab CI End-to-End Pipeline

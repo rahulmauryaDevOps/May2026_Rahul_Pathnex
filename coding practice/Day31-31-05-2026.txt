@@ -1,177 +1,152 @@
-Day 24 - Templates, ALB Listener, PV/PVC, Menu System, Automated Testing
+Day 25 - Lineinfile, Key Pair, Sidecar Pod, File Count, Dependency Cache
 
 ====================================================
-1. Ansible — Deploy Config Using Template
+1. Ansible — Modify Existing Line
 ====================================================
 
 ---
-- name: Deploy Pathnex template
+- name: Update SSH config for Pathnex
   hosts: all
   become: yes
 
   tasks:
-    - name: Create config
-      template:
-        src: pathnex.conf.j2
-        dest: /etc/pathnex.conf
-
-Template File (pathnex.conf.j2):
-
-Application=Pathnex
-Environment=Dev
-Team=DevOps
+    - name: Disable root login
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^PermitRootLogin"
+        line: "PermitRootLogin no"
 
 Commands Practiced:
 
-mkdir ansible-day24
-cd ansible-day24
-vim template.yml
-vim pathnex.conf.j2
+mkdir ansible-day25
+cd ansible-day25
 
-ansible-playbook --syntax-check template.yml
-ansible-playbook template.yml
+vim lineinfile.yml
+
+ansible-playbook --syntax-check lineinfile.yml
+ansible-playbook lineinfile.yml
+
+grep PermitRootLogin /etc/ssh/sshd_config
 
 Concept:
-- Ansible Template Module
-- Jinja2 Templates
-- Dynamic Configuration
+- lineinfile Module
+- SSH Hardening
 - Configuration Management
+- File Modification
 
 
 ====================================================
-2. Terraform — ALB Listener
+2. Terraform — EC2 Key Pair Output
 ====================================================
 
-resource "aws_lb_listener" "PathnexListener" {
+resource "aws_key_pair" "PathnexKey" {
+  key_name   = "PathnexKey"
+  public_key = file("~/.ssh/id_rsa.pub")
+}
 
-  load_balancer_arn = aws_lb.PathnexALB.arn
-
-  port     = "80"
-  protocol = "HTTP"
-
-  default_action {
-    type = "fixed-response"
-
-    fixed_response {
-      content_type = "text/plain"
-      message_body = "Pathnex ALB Running"
-      status_code  = "200"
-    }
-  }
+output "Pathnex_Key_Name" {
+  value = aws_key_pair.PathnexKey.key_name
 }
 
 Commands Practiced:
 
-mkdir terraform-day24
-cd terraform-day24
-vim alb-listener.tf
+ssh-keygen -t rsa -b 4096
+
+mkdir terraform-day25
+cd terraform-day25
+
+vim keypair.tf
 
 terraform init
 terraform validate
 terraform plan
 
 Concept:
-- AWS Application Load Balancer
-- ALB Listener
-- HTTP Port 80
-- Fixed Response
-- Load Balancing
+- AWS Key Pair
+- SSH Authentication
+- Public and Private Keys
+- Terraform Output
+- Secure EC2 Access
 
 
 ====================================================
-3. Kubernetes — Persistent Volume and PVC
+3. Kubernetes — Multi-Container Pod (Sidecar Logging)
 ====================================================
 
 apiVersion: v1
-kind: PersistentVolume
+kind: Pod
 
 metadata:
-  name: pathnex-pv
+  name: pathnex-sidecar
 
 spec:
-  capacity:
-    storage: 1Gi
+  containers:
 
-  accessModes:
-    - ReadWriteOnce
+    - name: app
+      image: nginx
 
-  hostPath:
-    path: /data/pathnex
+    - name: log-writer
+      image: busybox
 
----
-
-apiVersion: v1
-kind: PersistentVolumeClaim
-
-metadata:
-  name: pathnex-pvc
-
-spec:
-  accessModes:
-    - ReadWriteOnce
-
-  resources:
-    requests:
-      storage: 500Mi
+      command:
+        ["sh", "-c", "while true; do echo log entry; sleep 5; done"]
 
 Commands Practiced:
 
-mkdir k8s-day24
-cd k8s-day24
-vim pv-pvc.yml
+mkdir k8s-day25
+cd k8s-day25
 
-kubectl apply --dry-run=client -f pv-pvc.yml
-kubectl apply -f pv-pvc.yml
+vim sidecar.yml
 
-kubectl get pv
-kubectl get pvc
-kubectl get pv,pvc
+kubectl apply --dry-run=client -f sidecar.yml
+kubectl apply -f sidecar.yml
+
+kubectl get pods
+kubectl describe pod pathnex-sidecar
+
+kubectl logs pathnex-sidecar -c log-writer
 
 Concept:
-- Persistent Volume
-- Persistent Volume Claim
-- Storage Management
-- Data Persistence
-- Volume Binding
+- Multi-Container Pod
+- Sidecar Pattern
+- Logging Container
+- Shared Pod Resources
+- Kubernetes Logging
 
 
 ====================================================
-4. Shell Script — Menu Driven Program
+4. Shell Script — Count Files in Directory
 ====================================================
 
 #!/bin/bash
 
-echo "1) Show date"
-echo "2) Show uptime"
-echo "3) Show users"
+DIR="/var/log"
 
-read -p "Choose option: " opt
+COUNT=$(ls $DIR | wc -l)
 
-case $opt in
-  1) date ;;
-  2) uptime ;;
-  3) who ;;
-  *) echo "Invalid choice" ;;
-esac
+echo "Total files in $DIR: $COUNT"
 
 Commands Practiced:
 
-mkdir shell-day24
-cd shell-day24
-vim menu.sh
+mkdir shell-day25
+cd shell-day25
 
-chmod +x menu.sh
-./menu.sh
+vim filecount.sh
+
+chmod +x filecount.sh
+
+./filecount.sh
 
 Concept:
-- Menu Driven Script
-- Case Statement
-- User Input Handling
-- Linux Administration Automation
+- File Counting
+- Linux Directories
+- wc Command
+- Shell Variables
+- Basic Monitoring
 
 
 ====================================================
-5. Jenkins Pipeline — Run Unit and Integration Tests
+5. Jenkins Pipeline — Cache Dependencies
 ====================================================
 
 pipeline {
@@ -179,8 +154,8 @@ pipeline {
 
     environment {
         INSTITUTE_NAME = "Pathnex"
-        TEAM = "QA"
-        ENV = "dev"
+        TEAM = "DevOps"
+        ENV = "staging"
     }
 
     stages {
@@ -191,21 +166,15 @@ pipeline {
             }
         }
 
-        stage('Unit Test') {
+        stage('Build') {
             steps {
-                sh 'mvn test -Dgroup=unit'
-            }
-        }
-
-        stage('Integration Test') {
-            steps {
-                sh 'mvn verify -Dgroup=integration'
-            }
-        }
-
-        stage('Report') {
-            steps {
-                sh 'echo "Tests completed for $INSTITUTE_NAME by $TEAM in $ENV environment"'
+                sh '''
+                if [ -d ".m2" ]; then
+                    echo "Using cached dependencies for $INSTITUTE_NAME in $ENV by $TEAM"
+                else
+                    mvn clean compile
+                fi
+                '''
             }
         }
     }
@@ -213,68 +182,72 @@ pipeline {
 
 Commands Practiced:
 
-mkdir jenkins-day24
-cd jenkins-day24
+mkdir jenkins-day25
+cd jenkins-day25
+
 vim Jenkinsfile
 
-mvn test
-mvn verify
+mvn clean compile
 
 Concept:
-- Unit Testing
-- Integration Testing
-- Maven Lifecycle
-- Jenkins QA Pipeline
-- Automated Testing
+- Maven Cache
+- Dependency Management
+- Faster Builds
+- Jenkins Optimization
+- CI/CD Performance
 
 
 ====================================================
-6. GitLab CI — Run Tests
+6. GitLab CI — Cache Dependencies
 ====================================================
 
 stages:
-  - unit
-  - integration
+  - build
 
 variables:
   INSTITUTE_NAME: "Pathnex"
-  TEAM: "QA"
-  ENV: "dev"
+  TEAM: "DevOps"
+  ENV: "staging"
 
-unit-test:
-  stage: unit
-
-  image: maven:3.8.1-jdk-17
-
-  script:
-    - mvn test -Dgroup=unit
-    - echo "Unit tests completed for $INSTITUTE_NAME by $TEAM in $ENV"
-
-integration-test:
-  stage: integration
+build:
+  stage: build
 
   image: maven:3.8.1-jdk-17
 
+  cache:
+    key: "${ENV}-maven-cache"
+
+    paths:
+      - .m2/repository
+
   script:
-    - mvn verify -Dgroup=integration
-    - echo "Integration tests completed for $INSTITUTE_NAME by $TEAM in $ENV"
+    - mvn clean compile
+    - echo "Cached dependencies for $INSTITUTE_NAME in $ENV by $TEAM"
+
+Commands Practiced:
+
+mkdir gitlab-day25
+cd gitlab-day25
+
+vim .gitlab-ci.yml
+
+mvn clean compile
 
 Concept:
-- GitLab CI Testing
-- Unit Testing
-- Integration Testing
-- Maven Lifecycle
-- CI Quality Gates
+- GitLab Cache
+- Maven Repository
+- Dependency Management
+- Faster Builds
+- CI/CD Optimization
 
 
 ====================================================
 Topics Covered
 ====================================================
 
-1. Ansible Template Module
-2. Terraform ALB Listener
-3. Kubernetes PV and PVC
-4. Shell Menu Driven Program
-5. Jenkins Automated Testing Pipeline
-6. GitLab CI Automated Testing Pipeline
-
+1. Ansible lineinfile Module
+2. Terraform EC2 Key Pair Output
+3. Kubernetes Multi-Container Pod (Sidecar)
+4. Shell Script File Count
+5. Jenkins Dependency Cache
+6. GitLab CI Dependency Cache
