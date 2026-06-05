@@ -1,0 +1,28 @@
+Start Time: 04:00 PM
+End Time: 06:30 PM
+
+Topics Covered:
+
+- Ansible User Management
+- Terraform EC2 Provisioning
+- Kubernetes ClusterIP Service
+- Shell Monitoring Menu
+- Jenkins Pipeline Automation
+- GitLab CI Automation
+
+Activities:
+
+- Created Linux user with SSH key
+- Provisioned EC2 with project tag
+- Created Kubernetes deployment and ClusterIP service
+- Built menu-driven monitoring script
+- Implemented Jenkins pipeline automation
+- Implemented GitLab CI automation
+
+Concepts Learned:
+
+- User Administration
+- AWS Infrastructure
+- Kubernetes Networking
+- Shell Scripting
+- CI/CD Automation
