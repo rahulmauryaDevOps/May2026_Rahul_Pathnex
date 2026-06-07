@@ -3,18 +3,18 @@ End Time: 10:30 PM
 
 Topics Covered:
 
-- Ansible Templates
-- Terraform ALB Listener
-- Kubernetes PV/PVC
-- Shell Menu Driven Script
-- Jenkins Automated Testing
-- GitLab CI Automated Testing
+- Ansible lineinfile
+- Terraform Key Pair
+- Kubernetes Sidecar Pattern
+- Shell File Count Script
+- Jenkins Dependency Cache
+- GitLab Dependency Cache
 
 Activities:
 
-- Practiced Jinja2 template deployment
-- Studied ALB listener configuration
-- Practiced persistent storage concepts
-- Created menu driven shell script
-- Studied Jenkins testing pipeline
-- Studied GitLab CI testing workflow
+- Modified SSH configuration using lineinfile
+- Practiced AWS Key Pair creation
+- Studied Sidecar logging pattern
+- Wrote file counting script
+- Learned Maven dependency caching in Jenkins
+- Learned dependency caching in GitLab CI
