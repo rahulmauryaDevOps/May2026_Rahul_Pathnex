@@ -1,0 +1,33 @@
+L2 Day02 – Services & Tags
+
+Start Time: 01:30 PM
+
+End Time: 
+
+Topics Covered:
+
+* Ansible Nginx Installation and Service Enablement
+* Terraform EC2 Instance with Tags
+* Kubernetes Deployment with 2 Replicas
+* Shell Script for Disk Usage Monitoring
+* Docker Images and Containers
+* Dockerfile with RUN and CMD Instructions
+
+Activities Performed:
+
+* Installed and enabled Nginx using Ansible
+* Created Terraform EC2 resource with training tags
+* Created Kubernetes Deployment with 2 replicas
+* Checked disk usage using shell script
+* Pulled Ubuntu image and inspected containers
+* Created Dockerfile using RUN and CMD
+
+Concepts Learned:
+
+* Ansible Service Module
+* AWS Resource Tagging
+* Kubernetes Replica Management
+* Linux Disk Monitoring
+* Docker Images vs Containers
+* Dockerfile Build Instructions
+
