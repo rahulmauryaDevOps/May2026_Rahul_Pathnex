@@ -1,0 +1,33 @@
+L2 Day03 – Ansible, Terraform & Kubernetes Basics
+
+Start Time: 01:00 PM
+
+End Time:  02:30 PM
+
+Topics Covered:
+
+* Ansible Apache Installation and Service Management
+* Terraform EC2 Instance Creation (t3.medium)
+* Kubernetes ReplicaSet with 3 Replicas
+* Shell Script for User Information
+* Docker Nginx Web Server Deployment
+
+Activities Performed:
+
+* Installed and started Apache using Ansible
+* Created Terraform configuration for EC2 instance
+* Created Kubernetes ReplicaSet with 3 replicas
+* Retrieved user and group information using shell script
+* Built Docker image using Nginx
+* Deployed container and exposed web server
+* Served custom HTML page through Nginx
+
+Concepts Learned:
+
+* Ansible yum and service modules
+* Terraform resource blocks and tags
+* Kubernetes ReplicaSet architecture
+* Linux user and group commands
+* Docker build and run workflow
+* Nginx static content hosting
+
