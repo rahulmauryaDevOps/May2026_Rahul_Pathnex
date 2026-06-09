@@ -1,0 +1,30 @@
+L2 Day04 – Basic CI/CD Concepts with Jenkins & GitLab
+
+Start Time: 09:30 PM
+
+End Time: 10:30 PM
+
+Topics Covered:
+
+* Jenkins Declarative Pipeline
+* Build, Test and Deploy Stages
+* GitLab CI/CD Pipeline
+* CI/CD Workflow Fundamentals
+
+Activities Performed:
+
+* Created Jenkins Pipeline
+* Practiced Build Stage
+* Practiced Test Stage
+* Practiced Deploy Stage
+* Created GitLab CI/CD Pipeline
+* Understood CI/CD execution flow
+
+Concepts Learned:
+
+* Continuous Integration (CI)
+* Continuous Deployment (CD)
+* Jenkins Pipeline Structure
+* GitLab Runner and Pipeline Execution
+* Build → Test → Deploy Workflow
+
