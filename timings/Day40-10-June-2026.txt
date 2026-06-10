@@ -1,0 +1,33 @@
+Start Time: 09:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Jenkinsfile with Git Integration
+- GitLab CI/CD Pipeline
+- Docker Build and Push Workflow
+- Ansible User Management
+- Terraform EC2 Provisioning
+- Dockerizing Python Applications
+
+Activities:
+
+- Created Jenkins pipeline for Build, Test and Deploy stages
+- Configured Git repository integration in Jenkins
+- Implemented GitLab CI/CD pipeline stages
+- Practiced Docker image build process
+- Created Ansible playbook for user management
+- Provisioned EC2 instance using Terraform
+- Added EBS volume configuration in Terraform
+- Containerized Python application using Docker
+
+Concepts Learned:
+
+- Jenkins Pipeline Architecture
+- GitLab CI/CD Workflow
+- Docker Image Creation
+- Ansible User and Permission Management
+- Terraform Resource Configuration
+- EC2 and EBS Provisioning
+- Infrastructure as Code (IaC)
+- Application Containerization
