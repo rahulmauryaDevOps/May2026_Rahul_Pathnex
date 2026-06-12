@@ -1,0 +1,37 @@
+Start Time: 04:00 PM
+End Time: 05:30 PM
+
+Topics Covered:
+
+- Ansible Nginx Automation
+- Terraform EC2 with IAM Role
+- Kubernetes ConfigMap Management
+- Kubernetes Secret Management
+- Shell Scripting for Log Archiving
+- Dockerizing Java Applications
+
+Activities:
+
+- Installed and configured Nginx using Ansible
+- Deployed custom nginx.conf configuration file
+- Automated Nginx service startup and enablement
+- Created IAM Role for EC2 using Terraform
+- Provisioned EC2 instance with IAM permissions
+- Configured Kubernetes ConfigMap for application settings
+- Created Kubernetes Secret for sensitive data storage
+- Developed shell script for log archiving
+- Containerized Java application using Docker
+- Compiled and executed Java application inside Docker container
+
+Concepts Learned:
+
+- Ansible Configuration Management
+- Nginx Automation with Ansible
+- IAM Roles and Instance Profiles
+- Terraform IAM Resource Management
+- Kubernetes ConfigMaps
+- Kubernetes Secrets
+- Secure Configuration Management
+- Shell Script Log Archiving
+- Docker for Java Applications
+- Java Application Containerization
