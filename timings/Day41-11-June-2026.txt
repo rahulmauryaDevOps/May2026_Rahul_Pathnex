@@ -1,0 +1,36 @@
+Start Time: 01:00 PM
+End Time: 08:30 PM
+
+Topics Covered:
+
+- Ansible Docker Installation
+- Terraform VPC and EC2 Provisioning
+- Kubernetes Volume Mounts
+- Shell Scripting for Service Monitoring
+- Dockerizing Node.js Applications
+- CloudFormation Introduction
+
+Activities:
+
+- Created Ansible playbook to install Docker
+- Configured Docker service startup and enablement
+- Provisioned AWS VPC using Terraform
+- Created EC2 instance inside VPC
+- Configured Kubernetes Pod with Volume Mount
+- Implemented hostPath storage in Kubernetes
+- Developed shell script to monitor services
+- Containerized Node.js application using Docker
+- Configured Dockerfile with custom working directory
+
+Concepts Learned:
+
+- Ansible Package Management
+- Docker Service Configuration
+- Terraform VPC Architecture
+- EC2 Deployment with Terraform
+- Kubernetes Volumes and Volume Mounts
+- hostPath Storage Usage
+- Shell Script Automation
+- Service Health Monitoring
+- Docker Image Creation for Node.js
+- CloudFormation Basics
