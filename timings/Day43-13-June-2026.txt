@@ -1,0 +1,38 @@
+Start Time: 01:00 PM
+End Time: 02:30 PM
+
+Topics Covered:
+
+- Docker Fundamentals
+- Docker Compose Installation using Ansible
+- Terraform Security Groups and EBS Volumes
+- Kubernetes NodePort Service
+- Jenkins Docker Build and Push Pipeline
+- GitLab CI/CD Docker Build and Push Pipeline
+
+Activities:
+
+- Installed Docker Compose using Ansible
+- Configured Python PIP dependencies
+- Created Security Group for SSH and HTTP access
+- Learned inbound traffic rules and port management
+- Exposed Kubernetes application using NodePort Service
+- Configured Service selectors and port mappings
+- Built Docker images using Jenkins Pipeline
+- Pushed Docker images to Docker Hub through Jenkins
+- Implemented GitLab CI/CD Docker Build stage
+- Configured Docker Registry authentication
+- Pushed Docker images using GitLab CI/CD
+
+Concepts Learned:
+
+- Docker Compose Installation
+- Ansible PIP Module
+- AWS Security Groups
+- Ingress Rules and CIDR Blocks
+- Kubernetes Services
+- NodePort Architecture
+- Jenkins Docker Integration
+- Docker Registry Authentication
+- GitLab CI/CD Pipelines
+- Docker Image Lifecycle Management
