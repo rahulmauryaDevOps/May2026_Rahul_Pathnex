@@ -1,0 +1,35 @@
+Start Time: 11:00 AM
+End Time: 12:30 PM
+
+Topics Covered:
+
+- Docker Integration with Jenkins
+- Docker Integration with GitLab CI/CD
+- Ansible Docker Container Deployment
+- Terraform Auto Scaling Group (ASG)
+- Kubernetes Horizontal Pod Autoscaler (HPA)
+- Container Automation and Scaling
+
+Activities:
+
+- Pulled and deployed Nginx container using Ansible
+- Configured Docker container port mapping
+- Created Launch Configuration using Terraform
+- Provisioned Auto Scaling Group for EC2 instances
+- Configured Kubernetes Deployment
+- Implemented Horizontal Pod Autoscaler (HPA)
+- Learned automatic scaling based on CPU utilization
+- Practiced Docker integration concepts with CI/CD pipelines
+
+Concepts Learned:
+
+- Ansible docker_image Module
+- Ansible docker_container Module
+- Docker Container Management
+- AWS Launch Configuration
+- Auto Scaling Groups (ASG)
+- Desired, Min and Max Capacity
+- Kubernetes Deployment
+- Horizontal Pod Autoscaler (HPA)
+- CPU-Based Auto Scaling
+- Infrastructure and Application Scaling
