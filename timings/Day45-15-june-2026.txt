@@ -1,0 +1,42 @@
+Start Time: 01:00 PM
+End Time: 02:30 PM
+
+Topics Covered:
+
+- Ansible Multi-Container Deployment
+- Terraform VPC Architecture
+- Public and Private Subnets
+- Kubernetes StatefulSet
+- Persistent Storage in Kubernetes
+- Jenkins Build and Deploy Pipeline
+- GitLab CI/CD Deployment Pipeline
+- Docker WORKDIR and COPY Instructions
+
+Activities:
+
+- Pulled multiple Docker images using Ansible
+- Deployed Web and Database containers
+- Created VPC with public and private subnets
+- Configured subnet CIDR ranges and availability zones
+- Deployed MySQL StatefulSet in Kubernetes
+- Configured Persistent Volume Claims (PVC)
+- Built Docker image using Jenkins Pipeline
+- Pushed Docker image to Docker Registry
+- Deployed application to Kubernetes using Jenkins
+- Implemented Build, Push and Deploy stages in GitLab CI/CD
+- Practiced Docker WORKDIR and COPY commands
+
+Concepts Learned:
+
+- Ansible docker_image Module
+- Ansible docker_container Module
+- AWS VPC Fundamentals
+- Public vs Private Subnets
+- Kubernetes StatefulSet
+- VolumeClaimTemplates
+- Persistent Storage Management
+- Jenkins CI/CD Workflow
+- GitLab CI/CD Automation
+- Docker Image Management
+- WORKDIR and COPY Instructions
+- End-to-End Deployment Automation
