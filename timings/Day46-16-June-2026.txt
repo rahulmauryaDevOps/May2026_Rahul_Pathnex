@@ -1,0 +1,41 @@
+Start Time: 03:00 PM
+End Time: 04:30 PM
+
+Topics Covered:
+
+- Ansible Helm Installation
+- Terraform Elastic IP (EIP)
+- Kubernetes Helm Charts
+- Nginx Ingress Controller
+- Jenkins Multi-Stage Pipeline
+- GitLab CI/CD with Helm Deployment
+- Docker EXPOSE and Port Mapping
+
+Activities:
+
+- Installed Helm using Ansible Playbook
+- Downloaded and configured Helm binary
+- Provisioned EC2 with Elastic IP using Terraform
+- Associated static public IP with EC2 instance
+- Added Helm repository and deployed Nginx Ingress Controller
+- Implemented Jenkins multi-stage CI/CD pipeline
+- Automated Docker image build and push using Jenkins
+- Deployed application to Kubernetes using Jenkins
+- Configured GitLab CI/CD build, push and deploy stages
+- Automated Kubernetes deployment using Helm
+- Practiced Docker EXPOSE instruction and port mapping
+
+Concepts Learned:
+
+- Helm Installation and Configuration
+- AWS Elastic IP (EIP)
+- Static vs Dynamic Public IP
+- Helm Charts and Repositories
+- Nginx Ingress Controller
+- Jenkins Multi-Stage Pipeline
+- Docker Registry Authentication
+- GitLab CI/CD Automation
+- Kubernetes Deployment with Helm
+- Docker EXPOSE Instruction
+- Docker Port Mapping
+- End-to-End CI/CD Workflow
