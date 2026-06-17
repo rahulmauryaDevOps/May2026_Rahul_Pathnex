@@ -1,0 +1,35 @@
+Start Time: 05:00 PM
+End Time: 06:30 PM
+
+Topics Covered:
+
+- Ansible Auto Scaling Group (ASG)
+- Kubernetes Horizontal Pod Autoscaler (HPA)
+- Load Balancer Integration
+- Jenkins Parallel Stages
+- GitLab CI/CD Build, Test and Deploy
+- Docker Volumes and Persistent Storage
+
+Activities:
+
+- Configured Auto Scaling Group using Ansible
+- Defined Min, Max and Desired Capacity
+- Created Kubernetes Deployment with HPA
+- Implemented CPU-based Pod Autoscaling
+- Configured Jenkins Parallel Build and Test Stages
+- Automated Build, Test and Deploy workflow in GitLab
+- Created Docker Volume for persistent storage
+- Mounted Docker Volume inside container
+
+Concepts Learned:
+
+- AWS Auto Scaling Group
+- Launch Configuration
+- Horizontal Pod Autoscaler (HPA)
+- Load Balancer Traffic Distribution
+- Jenkins Parallel Execution
+- GitLab CI/CD Automation
+- Docker Volumes
+- Persistent Data Storage
+- Container Lifecycle Management
+- End-to-End Scaling and Automation
