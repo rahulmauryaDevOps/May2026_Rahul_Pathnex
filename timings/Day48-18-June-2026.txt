@@ -1,0 +1,40 @@
+Start Time: 04:00 PM
+End Time: 05:30 PM
+
+Topics Covered:
+
+- Ansible Multi-Node Nginx Setup
+- Terraform IAM Users and Policies
+- Kubernetes ConfigMap and Secrets
+- Kubernetes Nginx Deployment
+- Jenkins Multi-Branch Pipeline
+- GitLab CI/CD with Helm Deployment
+- Docker COPY vs ADD
+
+Activities:
+
+- Installed and configured Nginx on multiple nodes using Ansible
+- Created IAM User and IAM Policy using Terraform
+- Configured Kubernetes ConfigMap for Nginx configuration
+- Created Kubernetes Secret for sensitive data management
+- Deployed Nginx application with ConfigMap and Secret integration
+- Implemented Jenkins Docker build and deployment pipeline
+- Automated Docker image build process
+- Configured GitLab CI/CD deployment using Helm
+- Added custom Helm repository and deployed Nginx Ingress
+- Practiced Docker COPY and ADD instructions
+
+Concepts Learned:
+
+- Multi-Node Configuration Management
+- AWS IAM User Management
+- IAM Policies and Permissions
+- Kubernetes ConfigMaps
+- Kubernetes Secrets
+- Volume Mounts and subPath
+- Jenkins Multi-Branch Pipelines
+- Helm-Based Deployments
+- GitLab CI/CD Automation
+- Docker COPY Instruction
+- Docker ADD Instruction
+- Secure Application Configuration
