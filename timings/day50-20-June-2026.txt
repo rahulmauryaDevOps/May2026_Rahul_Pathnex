@@ -1,0 +1,43 @@
+Start Time: 09:00 PM
+End Time: 10:30 PM
+
+Topics Covered:
+
+- Ansible Nginx Reverse Proxy Setup
+- Terraform S3 Bucket Versioning and Logging
+- Kubernetes Ingress with Nginx Controller
+- Jenkins Build, Test and Deploy Pipeline
+- GitLab CI/CD Multi-Stage Deployment
+- Helm Upgrade and Install
+- Docker CMD vs ENTRYPOINT
+
+Activities:
+
+- Installed and configured Nginx as a Reverse Proxy
+- Managed Nginx configuration using Ansible templates
+- Created S3 Bucket with Versioning enabled
+- Configured S3 Access Logging
+- Created Kubernetes Ingress resource
+- Configured host-based traffic routing
+- Implemented Jenkins Build, Test and Deploy stages
+- Automated Kubernetes deployment using Jenkins
+- Built and pushed Docker images using GitLab CI/CD
+- Deployed applications using Helm upgrade --install
+- Practiced Docker CMD and ENTRYPOINT behavior
+
+Concepts Learned:
+
+- Reverse Proxy Architecture
+- Nginx Configuration Management
+- AWS S3 Versioning
+- S3 Access Logging
+- Kubernetes Ingress
+- Nginx Ingress Controller
+- Host-Based Routing
+- Jenkins CI/CD Pipeline
+- GitLab CI/CD Automation
+- Helm Upgrade Strategy
+- Docker CMD Instruction
+- Docker ENTRYPOINT Instruction
+- Container Startup Behavior
+- End-to-End Application Deployment
