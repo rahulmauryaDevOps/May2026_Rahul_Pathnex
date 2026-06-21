@@ -1,0 +1,43 @@
+Start Time: 01:00 PM
+End Time: 03:30 PM
+
+Topics Covered:
+
+- Ansible Web Application Deployment
+- Terraform Application Load Balancer (ALB)
+- EC2 Integration with Load Balancer
+- Kubernetes Redis Deployment with Persistence
+- Jenkins Multi-Environment Deployment
+- GitLab CI/CD Environment-Based Deployment
+- Docker Multi RUN Commands
+
+Activities:
+
+- Deployed web application files to multiple hosts using Ansible
+- Configured Apache web service automation
+- Created AWS Application Load Balancer (ALB) using Terraform
+- Provisioned EC2 instance behind Load Balancer
+- Installed Redis using Helm Chart
+- Enabled Persistent Storage for Redis
+- Configured Jenkins deployment for Production and Development environments
+- Implemented environment-based deployment logic in Jenkins Pipeline
+- Configured branch-based deployment strategy in GitLab CI/CD
+- Automated Production and Development Kubernetes deployments
+- Practiced Docker image optimization using multiple RUN commands
+
+Concepts Learned:
+
+- Multi-Host Application Deployment
+- AWS Application Load Balancer (ALB)
+- Load Balancer Traffic Distribution
+- EC2 and ALB Integration
+- Helm Chart Deployment
+- Redis Persistence
+- Persistent Volumes and Storage
+- Multi-Environment CI/CD Pipelines
+- Jenkins Environment Variables
+- Branch-Based Deployment Strategy
+- GitLab CI/CD Conditional Deployment
+- Docker Layer Optimization
+- Multi RUN Commands
+- Production vs Development Deployments
