@@ -1,0 +1,43 @@
+Start Time: 01:00 PM
+End Time: 03:30 PM
+
+Topics Covered:
+
+- Ansible EC2 Instance Provisioning
+- Terraform Multi-Region VPC and EC2
+- Kubernetes Multi-Cluster Deployment
+- Jenkins Multi-Cluster Deployment Pipeline
+- GitLab CI/CD Multi-Region Deployment
+- Docker Shell Script Execution
+
+Activities:
+
+- Launched EC2 instances in us-east-1 and us-west-1 using Ansible
+- Explored multi-region infrastructure deployment concepts
+- Created VPC architecture for multiple AWS regions
+- Provisioned EC2 instances across different regions using Terraform
+- Deployed Kubernetes application using Deployment and Service
+- Learned Multi-Cluster deployment concepts and Kubernetes Federation basics
+- Configured Jenkins pipeline for cluster-specific deployments
+- Implemented Kubernetes context-based deployment strategy
+- Configured GitLab CI/CD for production and development clusters
+- Practiced branch-based deployment automation
+- Created Docker image to execute shell script automatically
+- Configured Docker WORKDIR, COPY, RUN and CMD instructions
+
+Concepts Learned:
+
+- AWS Multi-Region Architecture
+- EC2 Provisioning Automation
+- Terraform Multi-Provider Concept
+- VPC Design Across Regions
+- Kubernetes Deployment and Service
+- Multi-Cluster Kubernetes Strategy
+- Kubernetes Context Management
+- Jenkins Environment-Based Deployment
+- GitLab Branch-Based Deployment
+- Production vs Development Clusters
+- Docker Shell Script Automation
+- Docker CMD and RUN Instructions
+- High Availability and Disaster Recovery Concepts
+- Multi-Region Application Deployment
