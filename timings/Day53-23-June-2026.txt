@@ -1,0 +1,47 @@
+Start Time: 01:00 PM
+End Time: 03:30 PM
+
+Topics Covered:
+
+- Ansible Auto-Healing with Systemd
+- Terraform Multi-Cloud Infrastructure
+- AWS and Azure Resource Provisioning
+- Kubernetes Liveness and Readiness Probes
+- Kubernetes Self-Healing Mechanism
+- Jenkins Rolling Deployments
+- GitLab CI/CD Multi-Cloud Deployment
+- Docker MySQL Container
+
+Activities:
+
+- Configured Nginx auto-healing using Systemd
+- Implemented automatic service restart policy
+- Reloaded Systemd configurations using Ansible
+- Created AWS VPC and EC2 infrastructure using Terraform
+- Created Azure Virtual Network and Linux VM
+- Explored Multi-Cloud deployment architecture
+- Configured Kubernetes Liveness Probe for health monitoring
+- Configured Kubernetes Readiness Probe for traffic management
+- Implemented self-healing deployment strategy
+- Automated rolling deployments using Jenkins
+- Verified deployment rollout status in Kubernetes
+- Configured GitLab CI/CD deployment to AWS and Azure clusters
+- Deployed applications across multiple Kubernetes clusters
+- Created and managed MySQL container using Docker
+
+Concepts Learned:
+
+- Auto-Healing Infrastructure
+- Systemd Service Management
+- Multi-Cloud Architecture
+- AWS VPC and EC2
+- Azure VNet and Virtual Machines
+- Kubernetes Liveness Probe
+- Kubernetes Readiness Probe
+- Self-Healing Pods
+- Rolling Updates
+- Deployment Rollout Monitoring
+- Multi-Cloud Kubernetes Deployments
+- Docker Environment Variables
+- MySQL Container Management
+- High Availability and Fault Tolerance
