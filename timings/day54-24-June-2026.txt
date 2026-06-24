@@ -1,0 +1,47 @@
+Start Time: 07:00 AM
+End Time: 08:30 AM
+
+Topics Covered:
+
+- HAProxy Load Balancing with Ansible
+- Terraform ALB and Auto Scaling Group
+- High Availability Architecture
+- Kubernetes Horizontal Pod Autoscaler (HPA)
+- Jenkins Blue-Green Deployment Strategy
+- GitLab CI/CD Blue-Green Deployment
+- Docker Redis Container
+
+Activities:
+
+- Installed and configured HAProxy Load Balancer using Ansible
+- Managed HAProxy configuration using Jinja2 templates
+- Configured Application Load Balancer (ALB) using Terraform
+- Created Auto Scaling Group (ASG) for EC2 instances
+- Explored High Availability and Fault Tolerance concepts
+- Implemented Kubernetes Horizontal Pod Autoscaler (HPA)
+- Configured automatic Pod scaling based on CPU utilization
+- Learned Metrics Server requirement for HPA
+- Implemented Blue-Green Deployment strategy using Jenkins
+- Validated Kubernetes deployments using rollout status
+- Configured Blue-Green deployment workflow in GitLab CI/CD
+- Explored zero-downtime deployment techniques
+- Created and managed Redis container using Docker
+- Practiced Redis data storage and persistence concepts
+
+Concepts Learned:
+
+- HAProxy Load Balancer
+- Reverse Proxy Architecture
+- Application Load Balancer (ALB)
+- Auto Scaling Group (ASG)
+- High Availability (HA)
+- Fault Tolerance
+- Horizontal Pod Autoscaler (HPA)
+- Metrics Server
+- Dynamic Pod Scaling
+- Blue-Green Deployment
+- Zero Downtime Deployment
+- Deployment Rollback Strategy
+- GitLab CI/CD Automation
+- Redis In-Memory Database
+- Docker Volume and Data Persistence
