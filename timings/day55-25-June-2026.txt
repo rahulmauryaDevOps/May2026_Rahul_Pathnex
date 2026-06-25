@@ -1,0 +1,44 @@
+Start Time: 07:00 PM
+End Time: 09:00 PM
+
+Topics Covered:
+
+- Prometheus Monitoring with Ansible
+- AWS CloudWatch Monitoring using Terraform
+- Kubernetes Fluentd Logging
+- Jenkins Monitoring Pipeline
+- GitLab CI/CD Monitoring Integration
+- Docker Flask Application
+
+Activities:
+
+- Installed Prometheus and Node Exporter using Ansible
+- Configured Prometheus service for infrastructure monitoring
+- Created AWS CloudWatch Log Group and Log Stream using Terraform
+- Learned centralized monitoring and logging concepts
+- Deployed Fluentd for Kubernetes log collection
+- Configured Fluentd Service for log forwarding
+- Implemented deployment monitoring in Jenkins Pipeline
+- Monitored Kubernetes Pods using kubectl commands
+- Configured GitLab CI/CD deployment monitoring workflow
+- Built and containerized a Python Flask application
+- Created Docker image for Flask application
+- Configured Docker WORKDIR, COPY, RUN and CMD instructions
+- Learned Flask application deployment inside Docker containers
+
+Concepts Learned:
+
+- Prometheus Monitoring
+- Node Exporter
+- AWS CloudWatch Logs
+- Log Groups and Log Streams
+- Centralized Logging
+- Fluentd Log Collector
+- Kubernetes Logging Architecture
+- Jenkins Deployment Monitoring
+- GitLab CI/CD Monitoring
+- Dockerizing Python Applications
+- Flask Web Framework
+- Docker Port Mapping
+- Containerized Web Applications
+- Monitoring and Logging Best Practices
