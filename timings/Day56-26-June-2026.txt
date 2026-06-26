@@ -1,0 +1,44 @@
+Start Time: 01:00 PM
+End Time: 03:30 PM
+
+Topics Covered:
+
+- Linux Firewall (iptables) with Ansible
+- AWS Security Groups using Terraform
+- Kubernetes RBAC (Role-Based Access Control)
+- Jenkins Secure Credentials Management
+- GitLab CI/CD Secure Deployment
+- Docker Networking
+
+Activities:
+
+- Configured Linux firewall using iptables through Ansible
+- Implemented default DROP policy and allowed SSH/HTTP traffic
+- Created AWS Security Group with SSH and HTTP ingress rules
+- Learned inbound and outbound traffic filtering concepts
+- Configured Kubernetes ClusterRoleBinding for RBAC
+- Explored Role, ClusterRole, RoleBinding and ClusterRoleBinding
+- Managed secure credentials in Jenkins using Credentials Store
+- Authenticated Docker Registry securely from Jenkins Pipeline
+- Implemented secure deployment workflow in GitLab CI/CD
+- Learned secure handling of registry credentials using CI/CD variables
+- Created custom Docker bridge network
+- Connected multiple Docker containers to the same network
+- Verified container-to-container communication using Docker networking
+
+Concepts Learned:
+
+- Linux iptables Firewall
+- Firewall Hardening
+- AWS Security Groups
+- Ingress and Egress Rules
+- Kubernetes RBAC
+- ClusterRole and ClusterRoleBinding
+- Principle of Least Privilege
+- Jenkins Credentials Store
+- Secure Credentials Management
+- GitLab CI/CD Variables
+- Docker Bridge Network
+- Container-to-Container Communication
+- Docker Network Isolation
+- Infrastructure Security Best Practices
