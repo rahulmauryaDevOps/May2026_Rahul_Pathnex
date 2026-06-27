@@ -1,0 +1,44 @@
+Start Time: 07:00 AM
+End Time: 09:00 AM
+
+**Topics Covered:**
+
+* Ansible Backup and Restore
+* Terraform S3 Backup and Cross-Region Replication Concepts
+* Kubernetes StatefulSet with Persistent Volumes
+* Jenkins Workspace Backup Strategy
+* GitLab CI/CD Backup and Restore
+* Docker Compose
+
+**Activities:**
+
+* Created backup and restore automation using Ansible
+* Backed up Linux /etc directory using tar
+* Restored backup archives using Ansible
+* Created S3 buckets for backup storage using Terraform
+* Learned S3 Versioning and Cross-Region Backup concepts
+* Uploaded backup files to Amazon S3
+* Deployed StatefulSet with Persistent Volume Claims (PVC)
+* Configured persistent storage for stateful applications
+* Implemented Jenkins workspace backup and restore pipeline
+* Automated deployment file backup and restore using GitLab CI/CD
+* Created and managed an Nginx container using Docker Compose
+* Learned Docker Compose services, container naming, and port mapping
+
+**Concepts Learned:**
+
+* Disaster Recovery (DR)
+* Backup and Restore
+* AWS S3 Versioning
+* Cross-Region Backup Strategy
+* StatefulSet
+* Persistent Volumes (PV)
+* Persistent Volume Claims (PVC)
+* Data Persistence
+* Jenkins Workspace Backup
+* GitLab CI/CD Backup Automation
+* Docker Compose
+* Multi-Container Management
+* Infrastructure Recovery
+* Business Continuity
+
