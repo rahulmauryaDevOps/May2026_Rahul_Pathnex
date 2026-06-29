@@ -1,0 +1,43 @@
+Start Time: 12:00 PM
+End Time: 01:30 PM
+
+**Topics Covered:**
+
+* Serverless Architecture
+* AWS Lambda Deployment using Ansible
+* Terraform API Gateway with Lambda Integration
+* Kubernetes Microservices Deployment using Helm
+* Jenkins Serverless CI/CD Pipeline
+* GitLab CI/CD Lambda Deployment
+* Docker Multi-Stage Build
+
+**Activities:**
+
+* Deployed AWS Lambda function using Ansible and AWS CLI
+* Created API Gateway and integrated it with AWS Lambda using Terraform
+* Learned Serverless Architecture and API Gateway concepts
+* Deployed microservices on Kubernetes using Helm Charts
+* Built and deployed Lambda functions using Jenkins Pipeline
+* Automated Lambda deployment using GitLab CI/CD
+* Created Multi-Stage Dockerfile for Java application
+* Built Java WAR file using Maven Builder stage
+* Deployed Java application on Tomcat using Production stage
+* Learned image optimization using Docker Multi-Stage Build
+
+**Concepts Learned:**
+
+* Serverless Computing
+* AWS Lambda
+* AWS API Gateway
+* Lambda Integration
+* REST API
+* Kubernetes Helm Charts
+* Microservices Deployment
+* Jenkins Serverless CI/CD
+* GitLab CI/CD for Lambda
+* Docker Multi-Stage Build
+* Maven Builder Image
+* Tomcat Deployment
+* WAR File Deployment
+* Docker Image Optimization
+
