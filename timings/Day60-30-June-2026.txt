@@ -1,0 +1,41 @@
+Start Time: 07:00 PM
+End Time: 09:00 PM
+
+**Topics Covered:**
+
+* Ansible Helm Deployment
+* Terraform Modules and Outputs
+* Kubernetes Helm-based Auto Scaling
+* Jenkins CI/CD Pipeline Scaling
+* Docker Health Check
+
+**Activities:**
+
+* Installed Helm using Ansible automation
+* Deployed microservices to Kubernetes using Helm Charts
+* Created reusable Terraform modules for VPC and EC2 infrastructure
+* Passed outputs between Terraform modules
+* Configured Kubernetes Deployment with Horizontal Pod Autoscaler (HPA)
+* Learned automatic pod scaling based on CPU utilization
+* Simulated Jenkins pipeline scaling for heavy workloads
+* Built and deployed application through Jenkins pipeline stages
+* Configured Docker HEALTHCHECK instruction for container monitoring
+* Learned container health monitoring and failure detection
+
+**Concepts Learned:**
+
+* Helm Automation
+* Kubernetes Helm Charts
+* Terraform Modules
+* Terraform Outputs
+* Infrastructure as Code (IaC)
+* Horizontal Pod Autoscaler (HPA)
+* Kubernetes Auto Scaling
+* Jenkins Pipeline Scaling
+* CI/CD Scalability
+* Docker HEALTHCHECK
+* Container Health Monitoring
+* High Availability
+* Infrastructure Reusability
+* Scalable Application Deployment
+
