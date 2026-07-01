@@ -1,0 +1,42 @@
+Start Time: 07:00 PM
+End Time: 09:00 PM
+
+**Topics Covered:**
+
+* Prometheus Node Exporter with Ansible
+* AWS CloudWatch Alarms using Terraform
+* Kubernetes Prometheus and Grafana
+* Jenkins Continuous Monitoring
+* GitLab CI/CD Monitoring and Alerts
+* Docker .dockerignore
+
+**Activities:**
+
+* Installed and configured Prometheus Node Exporter using Ansible
+* Started and enabled Prometheus Node Exporter service
+* Created AWS CloudWatch CPU Utilization Alarm using Terraform
+* Configured Amazon SNS topic for alert notifications
+* Deployed Prometheus and Grafana on Kubernetes
+* Learned monitoring and visualization using Prometheus and Grafana
+* Implemented CloudWatch monitoring in Jenkins Pipeline
+* Triggered CloudWatch metrics using AWS CLI
+* Configured monitoring stage in GitLab CI/CD pipeline
+* Created and configured a `.dockerignore` file to exclude unnecessary files from Docker images
+
+**Concepts Learned:**
+
+* Prometheus Node Exporter
+* Infrastructure Monitoring
+* AWS CloudWatch Alarms
+* Amazon SNS
+* CPU Utilization Monitoring
+* Kubernetes Monitoring
+* Prometheus
+* Grafana
+* Jenkins Monitoring Pipeline
+* GitLab CI/CD Monitoring
+* Docker .dockerignore
+* Docker Image Optimization
+* Continuous Monitoring
+* Alerting and Notifications
+
