@@ -1,0 +1,123 @@
+# Day 25 — Continuous Monitoring and Alerts
+
+## 🔹 Ansible — Setup Prometheus Node Exporter for Monitoring
+
+```yaml
+- name: Setup Prometheus Node Exporter
+  hosts: all
+  become: yes
+  tasks: 
+    - name: Install Prometheus Node Exporter
+      yum:
+        name: prometheus-node-exporter
+	state: present
+    - name: Start Prometheus Node Exporter service
+      service:
+        name: prometheus-node-exporter
+	state: started
+	enabled: yes
+
+🔹 Terraform — Create CloudWatch Alarms
+resource "aws_Cloudwatch_metric_alarm" "pathnex_cpu_alarm" {
+  alarm_name            = "pathnex-cpu-utilization-high"
+  comparison_operator   = "GreaterThanThreshhold"
+  evalution_periods     = "1"
+  metric_name           = "CPUUtilization"
+  namespace             = "AWS/EC2"
+  period                = "60"
+  statics               = "Average"
+  threshold             = "80"
+
+  dimensions ={
+    InstanceID = aws_instance.pathnex_ec2.id
+  }
+
+  alarm_actions = [aws_sns_topic.pathnex_alerts.arn]
+}
+
+resource "aws_sns_topic" "pathnex_alerts" {
+  name = "pathnex-alerts"
+}
+
+🔹 Kubernetes — Set Up Prometheus and Grafana
+apiVerions: apps/v1
+kind: deployment
+metadata:
+  name: prometheus
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+        - name: prometheus
+	  image: prom/prometheus:latest
+	  ports: 
+	    - containerPort: 9090
+
+---
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+    templates:
+      metadata:
+        labels:
+	  app: grafana
+      spec:
+        containers:
+	  - name: grafana
+	    image: grafana/grafana.latest
+	    ports:
+	      - containerPort: 3000
+
+🔹 Jenkinsfile — Continuous Monitoring and Alerts in CI Pipeline
+pipeline {
+  agent any
+  stages {
+      stage('Monitor') {
+          steps {
+             scripts {
+                 echo 'Triggering Cloudwatch alarm if CPU exceeds 80%
+		 sh 'aws cloudwatch put-metric-data --namespace "AWS/EC2" --metric-name "CPUUtilization" --value 90'
+	     }
+	  }
+      }
+      stage('Test') {
+         steps {
+             echo "Running tests...'
+	 }
+      }
+   }
+}
+
+🔹 GitLab CI/CD — Monitoring and Alerting in CI/CD Pipeline
+stages: 
+  - moniter
+  - test
+
+moniter
+  stage: monitor
+  script:
+    - aws cloudwatch put0metric-data --namespace "AWS/EC2" --metric-name "CPUUtilization" --value 90
+
+test:
+  stage: test
+    script:
+      - echo "running tests...'
+
+🔹 Docker
+# .dockerignore file
+node_modules
+.git
+temp      
