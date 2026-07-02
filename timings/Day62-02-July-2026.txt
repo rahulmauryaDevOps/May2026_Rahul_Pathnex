@@ -1,0 +1,44 @@
+Start Time: 07:00 PM
+End Time: 09:00 PM
+
+**Topics Covered:**
+
+* SSH Key-based Authentication with Ansible
+* AWS VPC Flow Logs using Terraform
+* Kubernetes Network Policies
+* Jenkins Secure Pipeline with Credentials
+* GitLab CI/CD Secrets Management
+* Docker Logs and Inspect
+
+**Activities:**
+
+* Generated SSH key pair using Ansible
+* Configured SSH public key authentication with `authorized_keys`
+* Enabled AWS VPC Flow Logs for network traffic monitoring
+* Created CloudWatch Log Group for VPC Flow Logs
+* Configured Kubernetes NetworkPolicy for secure pod-to-pod communication
+* Restricted ingress and egress traffic between Kubernetes pods
+* Secured Jenkins Pipeline using Jenkins Credentials Store
+* Used AWS credentials securely in Jenkins deployment pipeline
+* Configured secure deployment using GitLab CI/CD Variables
+* Learned secure credential management in GitLab pipelines
+* Viewed container logs using Docker logs
+* Inspected Docker container configuration using Docker inspect
+
+**Concepts Learned:**
+
+* SSH Key Authentication
+* Public and Private Keys
+* Ansible authorized_key Module
+* AWS VPC Flow Logs
+* Amazon CloudWatch Logs
+* Kubernetes NetworkPolicy
+* Pod-to-Pod Network Security
+* Jenkins Credentials Management
+* GitLab CI/CD Variables
+* Secure CI/CD Pipelines
+* Docker Logs
+* Docker Inspect
+* Infrastructure Security
+* DevSecOps Best Practices
+
