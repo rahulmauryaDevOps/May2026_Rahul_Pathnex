@@ -1,0 +1,41 @@
+Start Time: 07:00 PM
+End Time: 09:00 PM
+
+**Topics Covered:**
+
+* Serverless Lambda Deployment with Ansible
+* AWS DynamoDB using Terraform
+* Kubernetes Serverless with Kubeless
+* Jenkins Lambda Deployment Pipeline
+* Docker Exec, Stats, and Resource Limits
+
+**Activities:**
+
+* Deployed AWS Lambda function using Ansible and AWS CLI
+* Created DynamoDB table for a serverless application using Terraform
+* Configured DynamoDB with PAY_PER_REQUEST billing mode
+* Deployed a serverless function on Kubernetes using Kubeless
+* Learned Kubernetes Function-as-a-Service (FaaS) concepts
+* Built and packaged Lambda function using Jenkins Pipeline
+* Automated Lambda deployment using AWS CLI in Jenkins
+* Accessed running containers using Docker Exec
+* Monitored container CPU and memory usage with Docker Stats
+* Configured Docker container memory and CPU resource limits
+
+**Concepts Learned:**
+
+* Serverless Computing
+* AWS Lambda
+* Amazon DynamoDB
+* PAY_PER_REQUEST Billing
+* Kubeless
+* Function-as-a-Service (FaaS)
+* Kubernetes Serverless
+* Jenkins Serverless CI/CD
+* Lambda Deployment Automation
+* Docker Exec
+* Docker Stats
+* Docker Resource Limits
+* CPU and Memory Management
+* Container Performance Monitoring
+
