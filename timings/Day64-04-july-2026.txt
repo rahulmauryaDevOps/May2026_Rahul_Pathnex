@@ -1,0 +1,29 @@
+Start Time: 07:00 PM
+End Time: 09:00 PM
+
+Topics Covered:
+
+VPC Peering with Ansible
+Terraform VPC Peering and Routing
+Kubernetes Multi-Cluster Network Policy
+Docker Image Backup and Restore
+
+Activities:
+
+Created a VPC peering connection between two VPCs using Ansible.
+Configured Terraform to establish a VPC peering connection between two VPCs.
+Updated route tables via Terraform to allow traffic across the peered VPCs.
+Applied Kubernetes NetworkPolicy to restrict traffic between app and database pods across clusters.
+Practiced saving a Docker image to a tar archive and loading it back.
+Performed data backup from a Docker volume to the local file system.
+
+Concepts Learned:
+
+VPC Peering (Inter-VPC communication)
+Route Table Configuration in Peered VPCs
+Multi-Cluster Kubernetes Networking
+Kubernetes Network Policies (Ingress and Egress control)
+Docker Image Backup & Restore
+Docker Volume Data Backup
+Security and Traffic Control across VPCs and Clusters
+Docker Resource Management in Networking Contexts
