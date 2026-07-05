@@ -1,0 +1,40 @@
+Start Time: 08:00 PM
+End Time: 10:00 PM
+
+**Topics Covered:**
+
+* Ansible Complete Deployment Automation
+* Terraform Multi-Tier Infrastructure
+* Kubernetes Full Application Stack Deployment
+* Docker Security and Cleanup
+* Docker Compose Final Project
+
+**Activities:**
+
+* Automated deployment of Nginx, MySQL, and Redis containers using Ansible
+* Provisioned AWS VPC and EC2 instance using Terraform
+* Configured networking and security for a multi-tier application
+* Deployed a complete application stack on Kubernetes using Deployment and Service
+* Created Docker image with a non-root user for improved security
+* Performed Docker cleanup using prune commands
+* Built a multi-container application using Docker Compose
+* Configured frontend, backend, and MySQL database services
+* Learned production-ready Docker security and container management practices
+
+**Concepts Learned:**
+
+* Infrastructure Automation
+* Multi-Tier Architecture
+* AWS VPC
+* EC2 Provisioning
+* Kubernetes Deployment
+* Kubernetes Service
+* Docker Security Best Practices
+* Non-Root Containers
+* Docker Cleanup Commands
+* Docker Compose
+* Multi-Container Applications
+* Frontend-Backend-Database Architecture
+* Production Deployment
+* End-to-End DevOps Workflow
+
